@@ -65,30 +65,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        setProfileView();
     }
 
-    //프로필 이미지와 프로필 이름 설정
-
-    private void setProfileView(){
-        profileIconImage = (CircleImageView)headerLayout.findViewById(R.id.profile_icon);
-//        profileIconImage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                drawer.closeDrawer(GravityCompat.START);
-//                GoLib.getInstance().goProfileActivity(MainActivity.this);
-//            }
-//        });
-
-        TextView nameText = (TextView) headerLayout.findViewById(R.id.name);
-
-        if(memberInfoItem.nickname == null || memberInfoItem.nickname.equals("")){
-            nameText.setText(R.string.nickname_need);
-        }else {
-            nameText.setText(memberInfoItem.nickname);
-        }
-
-    }
 
     //뒤로가기 키를 눌렀을 때 호출.
     //네비게이션이 보이는 상태라면 네비게이션을 닫는다
