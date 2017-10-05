@@ -2,10 +2,14 @@ package com.bigpicture.team.dadungi;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,6 +24,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -173,6 +179,7 @@ public class MapFragment extends Fragment
 
         map.setOnMapClickListener(this);
         map.setOnCameraMoveListener(this);
+        map.setOnCameraIdleListener(this);
 
         UiSettings setting = map.getUiSettings();
         setting.setMyLocationButtonEnabled(true);
@@ -295,9 +302,11 @@ public class MapFragment extends Fragment
         marker.position(new LatLng(item.lat, item.lon));
         marker.title(item.name);
         marker.draggable(false);
+        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.test_marker));
 
         return marker;
     }
+
 
     /**
      * 충전소 마커를 표시할 수 있는 원을 지도에 그린다.
