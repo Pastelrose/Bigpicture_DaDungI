@@ -1,8 +1,6 @@
 package com.bigpicture.team.dadungi;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,15 +8,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.bigpicture.team.dadungi.item.MemberInfoItem;
 import com.bigpicture.team.dadungi.lib.GoLib;
-import com.bigpicture.team.dadungi.lib.StringLib;
-import com.bigpicture.team.dadungi.remote.RemoteService;
-import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -91,7 +84,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_map) {
             GoLib.getInstance().goFragment(getSupportFragmentManager(),
-                    R.id.content_main, ESCMapFragment.newInstance());
+                    R.id.content_main, MapFragment.newInstance());
         } else if (id == R.id.nav_board) {
 
         } else if (id == R.id.nav_news) {

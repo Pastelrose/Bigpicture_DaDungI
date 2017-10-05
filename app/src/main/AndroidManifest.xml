@@ -37,7 +37,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ESCInfoActivity" />
+        <activity android:name=".EnterpriseInfoActivity" />
         <activity android:name=".ESCRegisterActivity" />
         <activity android:name=".ProfileActivity"/>
     </application>
