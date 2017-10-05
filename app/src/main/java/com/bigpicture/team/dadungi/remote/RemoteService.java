@@ -69,8 +69,8 @@ public interface RemoteService {
 
     //지도
     @GET("/enterprise/map/list")
-    Call<ArrayList<EnterpriseInfoItem>> listMap(@Query("lat") double latitude,
-                                                @Query("lon") double longitude,
+    Call<ArrayList<EnterpriseInfoItem>> listMap(@Query("latitude") double latitude,
+                                                @Query("longitude") double longitude,
                                                 @Query("distance") int distance,
                                                 @Query("user_latitude") double userLatitude,
                                                 @Query("user_longitude") double userLongitude);

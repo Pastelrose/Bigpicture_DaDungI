@@ -46,7 +46,7 @@ import retrofit2.Response;
  */
 public class MapFragment extends Fragment
         implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener,
-                     GoogleMap.OnMapClickListener, GoogleMap.OnCameraMoveListener {
+                     GoogleMap.OnMapClickListener, GoogleMap.OnCameraMoveListener, GoogleMap.OnCameraIdleListener {
     private final String TAG = this.getClass().getSimpleName();
 
     Context context;
@@ -319,6 +319,12 @@ public class MapFragment extends Fragment
      */
     @Override
     public void onCameraMove() {
+//        showList();
+    }
+
+    @Override
+    public void onCameraIdle() {
+        GeoLib.getInstance().setLastKnownLocation(getActivity());
         showList();
     }
 
