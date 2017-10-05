@@ -15,10 +15,7 @@ public class EnterpriseInfoItem {
     public String bef;
     public double lat;
     public double lon;
-    @SerializedName("reg_date") public String regDate;
-    @SerializedName("mod_date") public String modDate;
     @SerializedName("user_distance_meter") public double userDistanceMeter;
-    @SerializedName("image_filename") public String imageFilename;
 
     @Override
     public String toString() {
@@ -31,10 +28,51 @@ public class EnterpriseInfoItem {
                 ", bef='" + bef + '\'' +
                 ", lat='" + lat + '\'' +
                 ", lon='" + lon + '\'' +
-                ", regDate='" + regDate + '\'' +
-                ", modDate='" + modDate + '\'' +
                 ", userDistanceMeter=" + userDistanceMeter +
-                ", imageFilename='" + imageFilename + '\'' +
                 '}';
+    }
+
+    public int getSeq() {
+        return seq;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddr() {
+        return addr;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public String getBef() {
+        return bef;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public double getUserDistanceMeter() {
+        return userDistanceMeter;
+    }
+
+    public EnterpriseInfoItem(String type, String name, String addr) {
+        this.type = type;
+        this.name = name;
+        this.addr = addr;
+    }
+    public EnterpriseInfoItem() {
     }
 }

@@ -59,12 +59,10 @@ public interface RemoteService {
                                        @Part("image_memo") RequestBody imageMemo,
                                        @Part MultipartBody.Part file);
 
-    @GET("/enterprise/list")
-    Call<ArrayList<EnterpriseInfoItem>> listEnterpriseInfo(@Query("seq") int seq,
-                                                    @Query("user_latitude") double userLatitude,
-                                                    @Query("user_longitude") double userLongitude,
-                                                    @Query("order_type") String orderType,
-                                                    @Query("current_page") int currentPage);
+    @GET("/enterprise/list2")
+    Call<ArrayList<EnterpriseInfoItem>> listEnterpriseInfo(@Query("type") String type,
+                                                           @Query("region") String region,
+                                                           @Query("name") String name);
 
 
     //지도

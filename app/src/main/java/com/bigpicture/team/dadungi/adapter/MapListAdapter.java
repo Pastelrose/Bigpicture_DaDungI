@@ -97,7 +97,7 @@ public class MapListAdapter extends RecyclerView.Adapter<MapListAdapter.ViewHold
         holder.description.setText(StringLib.getInstance().getSubString(context,
                 item.name, Constant.MAX_LENGTH_DESCRIPTION));
 
-        setImage(holder.imageView, item.imageFilename);
+        //setImage(holder.imageView, item.imageFilename);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

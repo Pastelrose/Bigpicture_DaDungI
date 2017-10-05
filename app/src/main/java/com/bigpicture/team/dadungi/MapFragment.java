@@ -70,7 +70,7 @@ public class MapFragment extends Fragment
     private HashMap<Marker, EnterpriseInfoItem> markerMap = new HashMap<>();
 
     RecyclerView list;
-    MapListAdapter adapter;
+    //MapListAdapter adapter;
     ArrayList<EnterpriseInfoItem> infoList = new ArrayList<>();
 
     Button listOpen;
@@ -123,12 +123,12 @@ public class MapFragment extends Fragment
         fragment.getMapAsync(this);
 
         list = (RecyclerView) view.findViewById(R.id.list);
-        adapter = new MapListAdapter(context, R.layout.row_es_map, infoList);
+        //adapter = new MapListAdapter(context, R.layout.row_es_map, infoList);
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         list.setLayoutManager(layoutManager);
-        list.setAdapter(adapter);
-
+        //list.setAdapter(adapter);
+        /*
         listOpen = (Button) view.findViewById(R.id.list_open);
         listOpen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,7 +139,7 @@ public class MapFragment extends Fragment
                 }
                 //setInfoList(!isOnList);
             }
-        });
+        });*/
     }
 
     /**
@@ -302,7 +302,6 @@ public class MapFragment extends Fragment
         marker.position(new LatLng(item.lat, item.lon));
         marker.title(item.name);
         marker.draggable(false);
-        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.test_marker));
 
         return marker;
     }
