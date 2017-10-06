@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Debug;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,7 +16,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.bigpicture.team.dadungi.item.EnterpriseInfoItem;
@@ -42,6 +46,7 @@ import com.bigpicture.team.dadungi.remote.ServiceGenerator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -57,6 +62,9 @@ public class MapFragment extends Fragment
 
     Context context;
 
+
+
+    String select_type = "*";
     String memberId;
     GoogleMap map;
 
@@ -70,7 +78,7 @@ public class MapFragment extends Fragment
     private HashMap<Marker, EnterpriseInfoItem> markerMap = new HashMap<>();
 
     RecyclerView list;
-    //MapListAdapter adapter;
+    MapListAdapter adapter;
     ArrayList<EnterpriseInfoItem> infoList = new ArrayList<>();
 
     Button listOpen;
@@ -95,7 +103,8 @@ public class MapFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         context = this.getActivity();
 
-        memberId = ((MyApp)this.getActivity().getApplication()).getMemberId();
+
+//        memberId = ((MyApp)this.getActivity().getApplication()).getMemberId();
 
         View v = inflater.inflate(R.layout.fragment_map, container, false);
 
@@ -122,24 +131,45 @@ public class MapFragment extends Fragment
         }
         fragment.getMapAsync(this);
 
-        list = (RecyclerView) view.findViewById(R.id.list);
-        //adapter = new MapListAdapter(context, R.layout.row_es_map, infoList);
-        LinearLayoutManager layoutManager
-                = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-        list.setLayoutManager(layoutManager);
-        //list.setAdapter(adapter);
-        /*
-        listOpen = (Button) view.findViewById(R.id.list_open);
-        listOpen.setOnClickListener(new View.OnClickListener() {
+
+        List<String> categories = new ArrayList<String>();
+        String[] types = getResources().getStringArray(R.array.type);
+        categories = spinnerSetting(types,categories);
+
+        Spinner spinner = (Spinner)view.findViewById(R.id.spinner);
+        spinner.setPrompt("업종 선택");
+
+        ArrayAdapter<String> adspin = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,categories);
+
+        adspin.setDropDownViewResource(android.R.layout.simple_list_item_checked);
+        spinner.setAdapter(adspin);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                if (adapter.getItemCount() == 0) {
-                    MyToast.s(context, context.getResources().getString(R.string.no_list));
-                    return;
-                }
-                //setInfoList(!isOnList);
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                select_type = parent.getItemAtPosition(position).toString();
+                MyLog.d(TAG,select_type);
             }
-        });*/
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                select_type = "*";
+                MyLog.d(TAG,select_type);
+            }
+        });
+
+
+
+    }
+
+    /**
+     * spinner element setting
+     */
+    public List spinnerSetting(String[] arr,List spinlist){
+        for(int i =0; i<arr.length;i++){
+            spinlist.add(arr[i]);
+        }
+        return spinlist;
     }
 
     /**
@@ -231,11 +261,11 @@ public class MapFragment extends Fragment
      * @param distance 거리
      * @param userLatLng 사용자 현재 위도, 경도 객체
      */
-    private void listMap( LatLng latLng, int distance, LatLng userLatLng) {
+    private void listMap( LatLng latLng, int distance, LatLng userLatLng, String select_type) {
         RemoteService remoteService = ServiceGenerator.createService(RemoteService.class);
 
         Call<ArrayList<EnterpriseInfoItem>> call = remoteService.listMap(latLng.latitude,
-                latLng.longitude, distance, userLatLng.latitude, userLatLng.longitude);
+                latLng.longitude, distance, userLatLng.latitude, userLatLng.longitude, select_type);
         call.enqueue(new Callback<ArrayList<EnterpriseInfoItem>>() {
             @Override
             public void onResponse(Call<ArrayList<EnterpriseInfoItem>> call,
@@ -302,6 +332,7 @@ public class MapFragment extends Fragment
         marker.position(new LatLng(item.lat, item.lon));
         marker.title(item.name);
         marker.draggable(false);
+        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.test_marker));
 
         return marker;
     }
@@ -360,6 +391,6 @@ public class MapFragment extends Fragment
 
         distanceMeter = GeoLib.getInstance().getDistanceMeterFromScreenCenter(map);
 
-        listMap(currentLatLng, distanceMeter, GeoItem.getKnownLocation());
+        listMap(currentLatLng, distanceMeter, GeoItem.getKnownLocation(), select_type);
     }
 }

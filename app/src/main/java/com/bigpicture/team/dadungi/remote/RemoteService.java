@@ -71,7 +71,8 @@ public interface RemoteService {
                                                 @Query("longitude") double longitude,
                                                 @Query("distance") int distance,
                                                 @Query("user_latitude") double userLatitude,
-                                                @Query("user_longitude") double userLongitude);
+                                                @Query("user_longitude") double userLongitude,
+                                                @Query("type") String type);
 
 
     //즐겨찾기
