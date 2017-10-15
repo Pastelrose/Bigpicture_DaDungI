@@ -72,7 +72,8 @@
     <string name="err">깃오류체크</string>
     
     <!--업종 -->
-    <string-array name="type">
+    <string-array name="types">
+        <item name="type_all">전체보기</item>
         <item name="type_health">건강/의료</item>
         <item name="type_parking">공영주차장</item>
         <item name="type_edu">교육</item>

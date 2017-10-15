@@ -133,12 +133,10 @@ public class MapFragment extends Fragment
 
 
         List<String> categories = new ArrayList<String>();
-        String[] types = getResources().getStringArray(R.array.type);
+        String[] types = getResources().getStringArray(R.array.types);
         categories = spinnerSetting(types,categories);
 
         Spinner spinner = (Spinner)view.findViewById(R.id.spinner);
-        spinner.setPrompt("업종 선택");
-
         ArrayAdapter<String> adspin = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,categories);
 
         adspin.setDropDownViewResource(android.R.layout.simple_list_item_checked);
@@ -148,6 +146,7 @@ public class MapFragment extends Fragment
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 select_type = parent.getItemAtPosition(position).toString();
+                if(select_type.contains("전체"))select_type="*";
                 MyLog.d(TAG,select_type);
             }
 
