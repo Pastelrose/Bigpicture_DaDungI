@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_list) {
             GoLib.getInstance().goFragment(getSupportFragmentManager(),
-                    R.id.content_main, ListFragment.newInstance());
+                    R.id.content_main, SearchListFragment.newInstance());
         } else if (id == R.id.nav_map) {
             GoLib.getInstance().goFragment(getSupportFragmentManager(),
                     R.id.content_main, MapFragment.newInstance());

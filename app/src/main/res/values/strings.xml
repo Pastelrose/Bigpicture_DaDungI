@@ -70,7 +70,7 @@
 
     <!-- 오류 체크 -->
     <string name="err">깃오류체크</string>
-    
+
     <!--업종 -->
     <string-array name="types">
         <item name="type_all">전체보기</item>
@@ -88,5 +88,8 @@
         <item name="type_teen">청소년시설</item>
         <item name="type_baby">출산/육아</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -13,8 +13,10 @@ import android.widget.Toast;
 
 import com.bigpicture.team.dadungi.adapter.MyListAdapter;
 import com.bigpicture.team.dadungi.item.EnterpriseInfoItem;
+import com.bigpicture.team.dadungi.item.SearchItem;
 import com.bigpicture.team.dadungi.remote.RemoteService;
 import com.bigpicture.team.dadungi.remote.ServiceGenerator;
+import com.github.kimkevin.cachepot.CachePot;
 
 import java.util.ArrayList;
 
@@ -27,9 +29,7 @@ public class ListFragment extends Fragment {
 
     ListView listView;
     MyListAdapter myListAdapter;
-    ArrayList<EnterpriseInfoItem> list_itemArrayList = new ArrayList<EnterpriseInfoItem>();;
-    EditText editText;
-    Button button;
+    ArrayList<EnterpriseInfoItem> list_itemArrayList = new ArrayList<EnterpriseInfoItem>();
 
     public static ListFragment newInstance() {
         ListFragment fragment = new ListFragment();
@@ -43,24 +43,15 @@ public class ListFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_list, container, false);
 
         listView = (ListView)v.findViewById(R.id.my_listView);
-        editText = (EditText)v.findViewById(R.id.searchbyname);
-        button = (Button)v.findViewById(R.id.btnSearch);
-
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                String name=editText.getText().toString();
-                Toast.makeText(getActivity(), name,Toast.LENGTH_SHORT).show();
-                setListView(name);
-            }
-        });
+        SearchItem si = CachePot.getInstance().pop(SearchItem.class);
+        setListView(si);
 
         return v;
     }
-    public void setListView(String name){
+    public void setListView(SearchItem si){
         RemoteService remoteService = ServiceGenerator.createService(RemoteService.class);
 
-        Call<ArrayList<EnterpriseInfoItem>> call = remoteService.listEnterpriseInfo("any","any","'%"+name+"%'");
+        Call<ArrayList<EnterpriseInfoItem>> call = remoteService.listEnterpriseInfo("any","any","'%"+si.getName()+"%'");
         call.enqueue(new Callback<ArrayList<EnterpriseInfoItem>>() {
             @Override
             public void onResponse(Call<ArrayList<EnterpriseInfoItem>> call,

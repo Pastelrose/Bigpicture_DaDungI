@@ -331,7 +331,6 @@ public class MapFragment extends Fragment
         marker.position(new LatLng(item.lat, item.lon));
         marker.title(item.name);
         marker.draggable(false);
-        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.test_marker));
 
         return marker;
     }
