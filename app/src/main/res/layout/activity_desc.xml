@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bigpicture.team.dadungi.DescActivity">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/include2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/coopName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="coopName"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coopType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="coopType" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="tel"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/benefit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="혜택"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/benDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="benDesc"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="지도" />
+
+                <TextView
+                    android:id="@+id/coopAddr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="coopAddr" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

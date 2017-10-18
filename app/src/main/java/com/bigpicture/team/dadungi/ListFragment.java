@@ -1,11 +1,13 @@
 package com.bigpicture.team.dadungi;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -45,6 +47,15 @@ public class ListFragment extends Fragment {
         listView = (ListView)v.findViewById(R.id.my_listView);
         SearchItem si = CachePot.getInstance().pop(SearchItem.class);
         setListView(si);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CachePot.getInstance().push(list_itemArrayList.get(position));
+                Intent intent = new Intent(getActivity(),DescActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return v;
     }

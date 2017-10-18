@@ -46,18 +46,15 @@ public interface RemoteService {
                                         @Part MultipartBody.Part file);
 
     //업체 정보
-    @GET("/enterprise/info/{seq}")
-    Call<EnterpriseInfoItem> selectEnterpriseInfo(@Path("seq") int enterpriseSeq,
-                                           @Query("seq") int seq);
-
-    @POST("/enterprise/info")
-    Call<String> insertEnterpriseInfo(@Body EnterpriseInfoItem infoItem);
+    @GET("/enterprise/info")
+    Call<EnterpriseInfoItem> selectEnterpriseInfo(@Query("seq") int seq);
 
     @Multipart
     @POST("/esc/info/image")
     Call<ResponseBody> uploadESCImage(@Part("cpId") RequestBody infoSeq,
                                        @Part("image_memo") RequestBody imageMemo,
                                        @Part MultipartBody.Part file);
+
 
     @GET("/enterprise/list2")
     Call<ArrayList<EnterpriseInfoItem>> listEnterpriseInfo(@Query("type") String type,

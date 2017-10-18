@@ -17,4 +17,15 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ActionBarTitleStyle" parent="android:Widget.TextView">
+
+        <!-- The action bar title font -->
+        <item name="android:fontFamily">sans-serif-light</item>
+
+
+        <!-- Customizes the size of the action bar title-->
+        <item name="android:textSize">22sp</item>
+
+    </style>
+
 </resources>
