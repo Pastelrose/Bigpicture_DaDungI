@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.bigpicture.team.dadungi.DescActivity">
+    android:layout_height="match_parent">
 
     <include
-        android:id="@+id/include2"
+        android:id="@+id/toolbar2"
         layout="@layout/toolbar" />
 
     <ScrollView
+        android:id = "@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/include2">
+        android:layout_below="@+id/toolbar2"
+        android:background="@color/bg_default">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,7 +24,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_margin="5dp">
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/bg_round">
 
                 <TextView
                     android:id="@+id/coopName"
@@ -33,37 +37,51 @@
                     android:text="coopName"
                     android:textColor="@color/text_color_black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_margin="3dp" />
 
                 <TextView
                     android:id="@+id/coopType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="coopType" />
+                    android:text="coopType"
+                    android:layout_margin="3dp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_margin="5dp">
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/bg_round">
 
                 <TextView
                     android:id="@+id/tel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
                     android:text="tel"
+                    android:textColor="@color/text_color_black"
                     android:textSize="16sp" />
             </LinearLayout>
             <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="5dp">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/bg_round">
 
                 <TextView
                     android:id="@+id/benefit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
                     android:text="혜택"
                     android:textSize="16sp" />
 
@@ -71,26 +89,45 @@
                     android:id="@+id/benDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
                     android:text="benDesc"
-                    android:textSize="16sp" />
+                    android:textColor="@color/text_color_black"
+                    android:textSize="14sp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_margin="5dp">
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/bg_round">
 
                 <TextView
-                    android:id="@+id/map"
+                    android:id="@+id/maptitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="지도" />
+                    android:layout_margin="3dp"
+                    android:text="지도"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/coopAddr"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="coopAddr" />
+                    android:layout_margin="3dp"
+                    android:text="coopAddr"
+                    android:textColor="@color/text_color_black" />
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.bigpicture.team.dadungi.WorkaroundMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_margin="@dimen/spacing_small" />
+
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
