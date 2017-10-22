@@ -20,22 +20,24 @@
             app:layout_constraintRight_toRightOf="parent"
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintRight_creator="1"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="8dp"
             android:weightSum="1"
-            android:id="@+id/linearLayout">
+            android:id="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <EditText
                 android:id="@+id/searchbyname"
                 android:layout_width="166dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.05" />
+                android:layout_weight="1.05"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/btnSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="검색"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
@@ -48,7 +50,7 @@
             android:layout_marginEnd="12dp"
             android:layout_marginLeft="12dp"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -57,8 +59,50 @@
             tools:layout_constraintRight_creator="1"
             tools:layout_constraintTop_creator="1"
             app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_constraintBottom_creator="1"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:id="@+id/linearLayout2"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintRight_creator="1"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Spinner
+                android:id="@+id/districtSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginBottom="145dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginRight="23dp"
+                android:layout_weight="0.39"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:layout_constraintBottom_creator="1"
+                tools:layout_constraintRight_creator="1" />
+
+            <Spinner
+                android:id="@+id/typeSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginBottom="145dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginRight="23dp"
+                android:layout_weight="0.37"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:layout_constraintBottom_creator="1"
+                tools:layout_constraintRight_creator="1" />
+        </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>
 

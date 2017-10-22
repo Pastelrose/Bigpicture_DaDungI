@@ -62,7 +62,7 @@ public class ListFragment extends Fragment {
     public void setListView(SearchItem si){
         RemoteService remoteService = ServiceGenerator.createService(RemoteService.class);
 
-        Call<ArrayList<EnterpriseInfoItem>> call = remoteService.listEnterpriseInfo("any","any","'%"+si.getName()+"%'");
+        Call<ArrayList<EnterpriseInfoItem>> call = remoteService.listEnterpriseInfo(si.getType(),"'%"+si.getDistrict()+"%'","'%"+si.getName()+"%'");
         call.enqueue(new Callback<ArrayList<EnterpriseInfoItem>>() {
             @Override
             public void onResponse(Call<ArrayList<EnterpriseInfoItem>> call,

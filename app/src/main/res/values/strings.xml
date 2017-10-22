@@ -89,6 +89,53 @@
         <item name="type_baby">출산/육아</item>
     </string-array>
 
+    <!--검색용 업종 -->
+    <string-array name="types_search">
+        <item name="type_all">전체업종</item>
+        <item name="type_health">건강/의료</item>
+        <item name="type_parking">공영주차장</item>
+        <item name="type_edu">교육</item>
+        <item name="type_etc">기타</item>
+        <item name="type_book">도서/문구</item>
+        <item name="type_library">도서관</item>
+        <item name="type_mart">마트/식품</item>
+        <item name="type_culture">문화/체육</item>
+        <item name="type_living">생활</item>
+        <item name="type_banking">생활/금융</item>
+        <item name="type_eat">외식</item>
+        <item name="type_teen">청소년시설</item>
+        <item name="type_baby">출산/육아</item>
+    </string-array>
+
+    <!--district-->
+    <string-array name="district_search">
+        <item name="district_all">전체지역</item>
+        <item name="district_Gangnam">강남구</item>
+        <item name="district_Gangdong">강동구</item>
+        <item name="district_Gangbook">강북구</item>
+        <item name="district_Gangseo">강서구</item>
+        <item name="district_Gwanak">관악구</item>
+        <item name="district_Gwangjin">광진구</item>
+        <item name="district_Gooro">구로구</item>
+        <item name="district_Geumcheon">금천구</item>
+        <item name="district_Nowon">노원구</item>
+        <item name="district_Dobong">도봉구</item>
+        <item name="district_Dongdaemoon">동대문구</item>
+        <item name="district_Dongjak">동작구</item>
+        <item name="district_Mapo">마포구</item>
+        <item name="district_Seodaemoon">서대문구</item>
+        <item name="district_Seocho">서초구</item>
+        <item name="district_Seongdong">성동구</item>
+        <item name="district_Seongbook">성북구</item>
+        <item name="district_Yangcheon">양천구</item>
+        <item name="district_Youngdeungpo">영등포구</item>
+        <item name="district_Yongsan">용산구</item>
+        <item name="district_Eunpyeong">은평구</item>
+        <item name="district_Jongro">종로구</item>
+        <item name="district_Joong">중구</item>
+        <item name="district_Joongrang">중랑구</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
