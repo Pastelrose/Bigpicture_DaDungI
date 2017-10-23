@@ -64,7 +64,10 @@ public class MapFragment extends Fragment
 
     Context context;
 
-
+    MapInfoFragment mapInfoFragment;
+    FragmentTransaction ft;
+    FragmentManager fm2;
+    boolean isMarkerClicked = false;
 
     String select_type = "*";
     GoogleMap map;
@@ -124,6 +127,7 @@ public class MapFragment extends Fragment
 
         ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.menu2);
 
+        fm2=getChildFragmentManager();
         FragmentManager fm = getChildFragmentManager();
         SupportMapFragment fragment = (SupportMapFragment) fm.findFragmentById(R.id.map);
         if (fragment == null) {
@@ -199,6 +203,7 @@ public class MapFragment extends Fragment
         map.setInfoWindowAdapter(null);
 
         map.setOnMarkerClickListener(this);
+        map.setOnMapClickListener(this);
 
         String fineLocationPermission = android.Manifest.permission.ACCESS_FINE_LOCATION;
 
@@ -207,7 +212,6 @@ public class MapFragment extends Fragment
 
         map.setMyLocationEnabled(true);
 
-        map.setOnMapClickListener(this);
         map.setOnCameraMoveListener(this);
         map.setOnCameraIdleListener(this);
 
@@ -234,9 +238,10 @@ public class MapFragment extends Fragment
             EnterpriseInfoItem item = markerMap.get(marker);
 
         GoLib.getInstance().goFragment(getChildFragmentManager(),R.id.map_info, MapInfoFragment.newInstance());
-        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-        MapInfoFragment mapInfoFragment = new MapInfoFragment();
+        ft = fm2.beginTransaction();
+        mapInfoFragment = new MapInfoFragment();
         ft.replace(R.id.map_info, mapInfoFragment).commit();
+        isMarkerClicked = true;
         return true;
     }
 
@@ -257,11 +262,11 @@ public class MapFragment extends Fragment
     @Override
     public void onMapClick(LatLng latLng) {
 //        setInfoList(false);
-
-        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-        MapInfoFragment mapInfoFragment = new MapInfoFragment();
-        ft.remove(mapInfoFragment);
-        ft.commit();
+        if(isMarkerClicked) {
+            ft = fm2.beginTransaction();
+            ft.remove(mapInfoFragment);
+            ft.commit();
+        }
     }
 
     /**
