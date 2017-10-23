@@ -10,6 +10,7 @@ import android.os.Debug;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -47,6 +48,7 @@ import com.bigpicture.team.dadungi.remote.ServiceGenerator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.zip.Inflater;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,7 +67,6 @@ public class MapFragment extends Fragment
 
 
     String select_type = "*";
-    String memberId;
     GoogleMap map;
 
     LatLng currentLatLng;
@@ -92,6 +93,8 @@ public class MapFragment extends Fragment
         return f;
     }
 
+
+
     /**
      * fragment_mapl 기반으로 뷰를 생성한다.
      * @param inflater XML를 객체로 변환하는 LayoutInflater 객체
@@ -103,11 +106,9 @@ public class MapFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         context = this.getActivity();
 
-
 //        memberId = ((MyApp)this.getActivity().getApplication()).getMemberId();
 
         View v = inflater.inflate(R.layout.fragment_map, container, false);
-
         return v;
     }
 
@@ -230,8 +231,12 @@ public class MapFragment extends Fragment
      */
     @Override
     public boolean onMarkerClick(Marker marker) {
-        EnterpriseInfoItem item = markerMap.get(marker);
-        GoLib.getInstance().goEnterpriseInfoActivity(context, item.seq);
+//            EnterpriseInfoItem item = markerMap.get(marker);
+
+//        GoLib.getInstance().goFragment(getChildFragmentManager(),R.id.map_info, MapInfoFragment.newInstance());
+//        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+//        MapInfoFragment mapInfoFragment = new MapInfoFragment();
+//        ft.replace(R.id.map_info, mapInfoFragment).commit();
         return true;
     }
 
@@ -251,7 +256,12 @@ public class MapFragment extends Fragment
      */
     @Override
     public void onMapClick(LatLng latLng) {
-        setInfoList(false);
+        //setInfoList(false);
+//
+//        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+//        MapInfoFragment mapInfoFragment = new MapInfoFragment();
+//        ft.remove(mapInfoFragment);
+//        ft.commit();
     }
 
     /**

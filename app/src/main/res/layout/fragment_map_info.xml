@@ -1,0 +1,56 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bigpicture.team.dadungi.MapInfoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/ent_name"
+                android:layout_width="113dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.73"
+                android:text="HealthCareCenter"
+                android:textColor="@color/text_color_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/ent_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.27"
+                android:text="Health"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ent_addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.00"
+            android:text="address adrress address"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/ent_bef"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="benefit"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+</FrameLayout>
