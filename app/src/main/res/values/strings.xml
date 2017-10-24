@@ -28,11 +28,11 @@
 
 
     <!--네비 화면-->
-    <string name="menu1">공지사항</string>
-    <string name="menu2">지도</string>
-    <string name="menu3">게시판</string>
-    <string name="menu4">뉴스</string>
-    <string name="nav_profile">프로필설정</string>
+    <string name="menu1">업체 검색</string>
+    <string name="menu2">지도 보기</string>
+    <string name="menu3">임시1</string>
+    <string name="menu4">임시2</string>
+    <string name="nav_profile">임시3</string>
 
 
     <!-- 프로필 -->

@@ -40,6 +40,7 @@ public class SearchListFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_search_list, container, false);
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.menu1);
 
         editText = (EditText)v.findViewById(R.id.searchbyname);
         button = (Button)v.findViewById(R.id.btnSearch);

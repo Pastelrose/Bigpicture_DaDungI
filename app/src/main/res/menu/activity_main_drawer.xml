@@ -5,7 +5,7 @@
         android:id="@+id/gl"
         android:checkableBehavior="all">
         <item
-            android:id="@+id/nav_list"
+            android:id="@+id/nav_search"
             android:icon="@drawable/leaf"
             android:title="@string/menu1" />
         <item
@@ -22,13 +22,6 @@
             android:title="@string/menu4" />
     </group>
 
-    <group
-        android:id="@+id/g2"
-        android:checkableBehavior="all" >
-        <item
-            android:id="@+id/nav_profile"
-            android:icon="@android:drawable/sym_def_app_icon"
-            android:title="@string/nav_profile"/>
-    </group>
+
 
 </menu>

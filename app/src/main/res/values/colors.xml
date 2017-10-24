@@ -13,4 +13,6 @@
 
     <color name="bg_default">#88EEEEEE</color>
     <color name="bg_white">#FFFFFF</color>
+    <color name="bg_littleGray">#eaeaea</color>
+
 </resources>

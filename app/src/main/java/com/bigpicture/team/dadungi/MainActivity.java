@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_list) {
+        if (id == R.id.nav_search) {
             GoLib.getInstance().goFragment(getSupportFragmentManager(),
                     R.id.content_main, SearchListFragment.newInstance());
         } else if (id == R.id.nav_map) {
@@ -90,8 +90,6 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_news) {
 
-        } else if (id == R.id.nav_profile) {
-            GoLib.getInstance().goProfileActivity(this);
         }
 
         drawer.closeDrawer(GravityCompat.START);
