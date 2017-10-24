@@ -7,10 +7,13 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.bigpicture.team.dadungi.adapter.SpinnerAdapter;
 import com.bigpicture.team.dadungi.item.SearchItem;
 import com.github.kimkevin.cachepot.CachePot;
 
@@ -19,6 +22,8 @@ public class SearchListFragment extends Fragment {
 
     EditText editText;
     Button button;
+    int pos;
+    String type, district;
 
     FragmentManager fm;
     FragmentTransaction fragmentTransaction;
@@ -39,12 +44,48 @@ public class SearchListFragment extends Fragment {
         editText = (EditText)v.findViewById(R.id.searchbyname);
         button = (Button)v.findViewById(R.id.btnSearch);
 
+        Spinner s1 = (Spinner) v.findViewById(R.id.typeSpinner);
+        String[] types= getResources().getStringArray(R.array.types_search);
+
+        SpinnerAdapter s1Adapter = new SpinnerAdapter(getActivity(),android.R.layout.simple_spinner_item, types);
+        s1.setAdapter(s1Adapter);
+        s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                pos = position;
+                type=parent.getItemAtPosition(pos).toString();
+                Toast.makeText(getActivity(),parent.getItemAtPosition(pos).toString(),Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
+        Spinner s2 = (Spinner) v.findViewById(R.id.districtSpinner);
+        final String[] districts= getResources().getStringArray(R.array.district_search);
+
+        SpinnerAdapter s2Adapter = new SpinnerAdapter(getActivity(),android.R.layout.simple_spinner_item, districts);
+        s2.setAdapter(s2Adapter);
+        s2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                pos = position;
+                district =parent.getItemAtPosition(pos).toString();
+                Toast.makeText(getActivity(),parent.getItemAtPosition(pos).toString(),Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 String name=editText.getText().toString();
-                SearchItem si = new SearchItem(name);
-                Toast.makeText(getActivity(), name,Toast.LENGTH_SHORT).show();
+                SearchItem si = new SearchItem(name,type,district);
+                Toast.makeText(getActivity(),name+" "+type,Toast.LENGTH_SHORT).show();
                 CachePot.getInstance().push(si);
 
                 fm = getChildFragmentManager();

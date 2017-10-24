@@ -58,7 +58,7 @@ public interface RemoteService {
 
     @GET("/enterprise/list2")
     Call<ArrayList<EnterpriseInfoItem>> listEnterpriseInfo(@Query("type") String type,
-                                                           @Query("region") String region,
+                                                           @Query("district") String district,
                                                            @Query("name") String name);
 
 

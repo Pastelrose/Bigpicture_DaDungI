@@ -59,12 +59,15 @@ import retrofit2.Response;
  */
 public class MapFragment extends Fragment
         implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener,
-                     GoogleMap.OnMapClickListener, GoogleMap.OnCameraMoveListener, GoogleMap.OnCameraIdleListener {
+        GoogleMap.OnMapClickListener, GoogleMap.OnCameraMoveListener, GoogleMap.OnCameraIdleListener {
     private final String TAG = this.getClass().getSimpleName();
 
     Context context;
 
-
+    MapInfoFragment mapInfoFragment;
+    FragmentTransaction ft;
+    FragmentManager fm2;
+    boolean isMarkerClicked = false;
 
     String select_type = "*";
     GoogleMap map;
@@ -124,6 +127,7 @@ public class MapFragment extends Fragment
 
         ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.menu2);
 
+        fm2=getChildFragmentManager();
         FragmentManager fm = getChildFragmentManager();
         SupportMapFragment fragment = (SupportMapFragment) fm.findFragmentById(R.id.map);
         if (fragment == null) {
@@ -199,6 +203,7 @@ public class MapFragment extends Fragment
         map.setInfoWindowAdapter(null);
 
         map.setOnMarkerClickListener(this);
+        map.setOnMapClickListener(this);
 
         String fineLocationPermission = android.Manifest.permission.ACCESS_FINE_LOCATION;
 
@@ -207,7 +212,6 @@ public class MapFragment extends Fragment
 
         map.setMyLocationEnabled(true);
 
-        map.setOnMapClickListener(this);
         map.setOnCameraMoveListener(this);
         map.setOnCameraIdleListener(this);
 
@@ -231,12 +235,13 @@ public class MapFragment extends Fragment
      */
     @Override
     public boolean onMarkerClick(Marker marker) {
-//            EnterpriseInfoItem item = markerMap.get(marker);
+            EnterpriseInfoItem item = markerMap.get(marker);
 
-//        GoLib.getInstance().goFragment(getChildFragmentManager(),R.id.map_info, MapInfoFragment.newInstance());
-//        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-//        MapInfoFragment mapInfoFragment = new MapInfoFragment();
-//        ft.replace(R.id.map_info, mapInfoFragment).commit();
+        GoLib.getInstance().goFragment(getChildFragmentManager(),R.id.map_info, MapInfoFragment.newInstance());
+        ft = fm2.beginTransaction();
+        mapInfoFragment = new MapInfoFragment();
+        ft.replace(R.id.map_info, mapInfoFragment).commit();
+        isMarkerClicked = true;
         return true;
     }
 
@@ -256,12 +261,12 @@ public class MapFragment extends Fragment
      */
     @Override
     public void onMapClick(LatLng latLng) {
-        //setInfoList(false);
-//
-//        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-//        MapInfoFragment mapInfoFragment = new MapInfoFragment();
-//        ft.remove(mapInfoFragment);
-//        ft.commit();
+//        setInfoList(false);
+        if(isMarkerClicked) {
+            ft = fm2.beginTransaction();
+            ft.remove(mapInfoFragment);
+            ft.commit();
+        }
     }
 
     /**
@@ -357,7 +362,7 @@ public class MapFragment extends Fragment
 
         CircleOptions circleOptions
                 = new CircleOptions().center(position).radius(radiusInMeters)
-                      .fillColor(shadeColor).strokeColor(strokeColor).strokeWidth(4);
+                .fillColor(shadeColor).strokeColor(strokeColor).strokeWidth(4);
         map.addCircle(circleOptions);
     }
 
