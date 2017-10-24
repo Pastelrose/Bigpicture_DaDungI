@@ -100,7 +100,6 @@
         <item name="type_library">도서관</item>
         <item name="type_mart">마트/식품</item>
         <item name="type_culture">문화/체육</item>
-        <item name="type_living">생활</item>
         <item name="type_banking">생활/금융</item>
         <item name="type_eat">외식</item>
         <item name="type_teen">청소년시설</item>
