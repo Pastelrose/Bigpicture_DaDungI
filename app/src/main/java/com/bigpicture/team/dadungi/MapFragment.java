@@ -255,16 +255,16 @@ public class MapFragment extends Fragment
      */
     @Override
     public boolean onMarkerClick(Marker marker) {
-            EnterpriseInfoItem item = markerMap.get(marker);
+        EnterpriseInfoItem ei = markerMap.get(marker);
 
-        GoLib.getInstance().goFragment(getChildFragmentManager(),R.id.map_info, MapInfoFragment.newInstance());
+        CachePot.getInstance().push(ei);
+
         ft = fm2.beginTransaction();
         mapInfoFragment = new MapInfoFragment();
         ft.replace(R.id.map_info, mapInfoFragment).commit();
         isMarkerClicked = true;
 
-        Log.d("choi","item info: name: "+item.getName() + "type: "+item.getType());
-        CachePot.getInstance().push(item);
+        Log.d("choi","item info: name: "+ei.getName() + "type: "+ei.getType()+ei.getAddr()+ei.getBef());
         return true;
     }
 
@@ -289,6 +289,7 @@ public class MapFragment extends Fragment
             ft = fm2.beginTransaction();
             ft.remove(mapInfoFragment);
             ft.commit();
+            isMarkerClicked = false;
         }
     }
 

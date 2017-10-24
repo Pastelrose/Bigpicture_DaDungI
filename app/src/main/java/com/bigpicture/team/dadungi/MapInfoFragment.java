@@ -17,14 +17,6 @@ import com.github.kimkevin.cachepot.CachePot;
 import com.google.android.gms.maps.*;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link MapInfoFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link MapInfoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class MapInfoFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,22 +25,11 @@ public class MapInfoFragment extends Fragment {
     TextView textView_addr;
     TextView textView_tel;
     TextView textView_bef;
-    EnterpriseInfoItem item = new EnterpriseInfoItem();
-
-    public MapInfoFragment() {
-        // Required empty public constructor
-    }
-
+    //EnterpriseInfoItem item = new EnterpriseInfoItem();
 
     public static MapInfoFragment newInstance(){
         MapInfoFragment f = new MapInfoFragment();
         return f;
-    }
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -61,49 +42,24 @@ public class MapInfoFragment extends Fragment {
         textView_tel = (TextView)view.findViewById(R.id.ent_tel);
         textView_bef = (TextView)view.findViewById(R.id.ent_bef);
 
+        EnterpriseInfoItem ei = CachePot.getInstance().pop(EnterpriseInfoItem.class);
+        setInfo(ei);
 
         // Inflate the layout for this fragment
         return view;
     }
 
-    void setinfo(EnterpriseInfoItem item){
-        textView_name.setText(item.getName());
-        textView_type.setText(item.getType());
-        textView_addr.setText(item.getAddr());
-        textView_tel.setText(item.getTel());
-        textView_bef.setText(item.getBef());
+    void setInfo(EnterpriseInfoItem ei){
+        textView_name.setText(ei.getName());
+        textView_type.setText(ei.getType());
+        textView_addr.setText(ei.getAddr());
+        textView_tel.setText(ei.getTel());
+        textView_bef.setText(ei.getBef());
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FragmentManager fm = getChildFragmentManager();
-
-        item = CachePot.getInstance().pop(EnterpriseInfoItem.class);
-        if(item !=null) setinfo(item);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        item = CachePot.getInstance().pop(EnterpriseInfoItem.class);
-        if(item !=null) setinfo(item);
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
-
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 }
