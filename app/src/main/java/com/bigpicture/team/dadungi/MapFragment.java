@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -112,6 +113,23 @@ public class MapFragment extends Fragment
 //        memberId = ((MyApp)this.getActivity().getApplication()).getMemberId();
 
         View v = inflater.inflate(R.layout.fragment_map, container, false);
+
+        v.setFocusableInTouchMode(true);
+        v.requestFocus();
+        v.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ( keyCode == KeyEvent.KEYCODE_BACK && isMarkerClicked){
+                    ft = fm2.beginTransaction();
+                    ft.remove(mapInfoFragment);
+                    ft.commit();
+                    isMarkerClicked = false;
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
         return v;
     }
 
