@@ -17,6 +17,7 @@ public class EnterpriseInfoItem {
     public double lon;
     @SerializedName("user_distance_meter") public double userDistanceMeter;
 
+
     @Override
     public String toString() {
         return "EnterpriseInfoItem{" +
@@ -74,5 +75,11 @@ public class EnterpriseInfoItem {
         this.addr = addr;
     }
     public EnterpriseInfoItem() {
+        this.seq = -1;
+        this.name = "이름";
+        this.type = "타입";
+        this.addr = "주소";
+        this.tel = "연락처";
+        this.bef = "혜택";
     }
 }

@@ -45,12 +45,17 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/ent_bef"
+        android:id="@+id/ent_bef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="benefit"
+        android:textSize="12sp" />
+        <TextView
+            android:id="@+id/ent_tel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="benefit"
+            android:text="tel"
             android:textSize="12sp" />
-
 
     </LinearLayout>
 </FrameLayout>

@@ -10,23 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bigpicture.team.dadungi.item.MemberInfoItem;
-import com.bigpicture.team.dadungi.lib.EtcLib;
-import com.bigpicture.team.dadungi.lib.GeoLib;
-import com.bigpicture.team.dadungi.lib.MyLog;
 import com.bigpicture.team.dadungi.lib.RemoteLib;
-import com.bigpicture.team.dadungi.lib.StringLib;
-import com.bigpicture.team.dadungi.remote.RemoteService;
-import com.bigpicture.team.dadungi.remote.ServiceGenerator;
 
-import java.lang.reflect.Member;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 //시작 액티비티, 사용자 정보를 통하여 메인으로 갈지 프로필로 갈지 결정한다
 public class IndexActivity extends AppCompatActivity {

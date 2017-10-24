@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.bigpicture.team.dadungi.item.EnterpriseInfoItem;
+import com.github.kimkevin.cachepot.CachePot;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -260,6 +262,9 @@ public class MapFragment extends Fragment
         mapInfoFragment = new MapInfoFragment();
         ft.replace(R.id.map_info, mapInfoFragment).commit();
         isMarkerClicked = true;
+
+        Log.d("choi","item info: name: "+item.getName() + "type: "+item.getType());
+        CachePot.getInstance().push(item);
         return true;
     }
 
