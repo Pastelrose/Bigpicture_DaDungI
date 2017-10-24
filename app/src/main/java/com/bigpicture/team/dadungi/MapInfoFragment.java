@@ -56,7 +56,6 @@ public class MapInfoFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FragmentManager fm = getChildFragmentManager();
-        fm.findFragmentById(R.id.map_info).setMenuVisibility(false);
 
     }
 
