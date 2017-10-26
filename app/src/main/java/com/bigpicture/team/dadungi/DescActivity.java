@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
@@ -81,7 +82,7 @@ public class DescActivity extends AppCompatActivity implements OnMapReadyCallbac
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent=new Intent(Intent.ACTION_CALL);
-                        intent.setData(Uri.parse("tel:" + item.getTel()));
+                        intent.setData(Uri.parse("tel:" + item.getTel().replace(")","-")));
                         try {
                             startActivity(intent);
                         } catch (Exception e) {
@@ -96,7 +97,8 @@ public class DescActivity extends AppCompatActivity implements OnMapReadyCallbac
                     }
 
                 });
-                alert.show();
+                if(item.getTel().length()>1)
+                    alert.show();
             }
         });
     }
@@ -136,7 +138,11 @@ public class DescActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void setView(){
         ((TextView) findViewById(R.id.coopName)).setText(item.getName());
         ((TextView) findViewById(R.id.coopType)).setText(item.getType());
-        ((TextView) findViewById(R.id.tel)).setText(item.getTel());
+        if(item.getTel().length()>1) {
+            ((TextView) findViewById(R.id.tel)).setText(item.getTel());
+            ((TextView) findViewById(R.id.tel)).setTextColor(Color.BLUE);
+            ((TextView) findViewById(R.id.tel)).setTypeface(null, Typeface.BOLD);
+        }
         ((TextView) findViewById(R.id.benDesc)).setText(item.getBef());
         ((TextView) findViewById(R.id.coopAddr)).setText(item.getAddr()) ;
 

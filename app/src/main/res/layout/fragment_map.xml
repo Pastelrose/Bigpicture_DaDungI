@@ -23,17 +23,19 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_margin="2dp"
+        android:background="@drawable/button_round" />
 
     <FrameLayout
         android:id="@+id/map_info"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/list"/>
+        android:layout_toEndOf="@+id/list" />
 
 
 </RelativeLayout>

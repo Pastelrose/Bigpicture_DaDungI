@@ -28,7 +28,6 @@ public class SearchListFragment extends Fragment {
     FragmentManager fm;
     FragmentTransaction fragmentTransaction;
     ListFragment lf;
-    boolean firstSearch = false;
 
     public static SearchListFragment newInstance() {
         SearchListFragment fragment = new SearchListFragment();
@@ -81,6 +80,13 @@ public class SearchListFragment extends Fragment {
             public void onNothingSelected(AdapterView<?> parent) {}
         });
 
+        SearchItem si = new SearchItem("","전체업종","전체지역");
+        CachePot.getInstance().push(si);
+        fm = getChildFragmentManager();
+        fragmentTransaction = fm.beginTransaction();
+        lf = new ListFragment();
+        fragmentTransaction.add(R.id.fragment, lf).commit();
+
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -92,13 +98,7 @@ public class SearchListFragment extends Fragment {
                 fm = getChildFragmentManager();
                 fragmentTransaction = fm.beginTransaction();
                 lf = new ListFragment();
-
-                if (firstSearch) {
-                    fragmentTransaction.add(R.id.fragment, lf).commit();
-                    firstSearch=false;
-                }else{
-                    fragmentTransaction.replace(R.id.fragment, lf).commit();
-                }
+                fragmentTransaction.replace(R.id.fragment, lf).commit();
             }
         });
 

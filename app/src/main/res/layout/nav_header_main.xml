@@ -18,27 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_icon"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity="top"
-            android:elevation="4dp"
-            android:src="@android:drawable/sym_def_app_icon"
-            app:civ_border_color="#AAAAAA"
-            app:civ_border_width="2dp" />
-
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/spacing_small2"
-            android:layout_below="@+id/profile_icon"
-            android:layout_centerHorizontal="true"
-            android:text="유저이름"
-            android:textStyle="bold"
-            android:textSize="@dimen/text_size_small2" />
 
     </RelativeLayout>
 </LinearLayout>

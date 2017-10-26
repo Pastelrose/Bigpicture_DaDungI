@@ -9,7 +9,9 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -20,7 +22,7 @@
             app:layout_constraintRight_toRightOf="parent"
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintRight_creator="1"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="0dp"
             android:weightSum="1"
             android:id="@+id/linearLayout"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -29,13 +31,15 @@
                 android:id="@+id/searchbyname"
                 android:layout_width="166dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
                 android:layout_weight="1.05"
-                android:textSize="12sp" />
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/btnSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
                 android:text="검색"
                 android:textSize="12sp" />
 
@@ -48,7 +52,7 @@
             android:layout_height="0dp"
             android:layout_alignParentStart="true"
             android:layout_marginEnd="12dp"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -59,32 +63,34 @@
             tools:layout_constraintRight_creator="1"
             tools:layout_constraintTop_creator="1"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="0.100000024"
             tools:layout_constraintBottom_creator="1"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp" />
 
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="0dp"
             android:layout_height="32dp"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal"
             android:weightSum="1"
-            android:id="@+id/linearLayout2"
-            tools:layout_constraintTop_creator="1"
-            tools:layout_constraintRight_creator="1"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="8dp"
-            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1">
 
             <Spinner
                 android:id="@+id/districtSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="32dp"
-                android:layout_marginBottom="145dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="23dp"
                 android:layout_marginRight="23dp"
-                android:layout_weight="0.39"
+                android:layout_weight="0.35"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 tools:layout_constraintBottom_creator="1"
@@ -94,10 +100,9 @@
                 android:id="@+id/typeSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="32dp"
-                android:layout_marginBottom="145dp"
                 android:layout_marginEnd="23dp"
                 android:layout_marginRight="23dp"
-                android:layout_weight="0.37"
+                android:layout_weight="0.22"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 tools:layout_constraintBottom_creator="1"

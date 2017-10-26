@@ -6,19 +6,19 @@
         android:checkableBehavior="all">
         <item
             android:id="@+id/nav_search"
-            android:icon="@drawable/leaf"
+            android:icon="@drawable/heart"
             android:title="@string/menu1" />
         <item
             android:id="@+id/nav_map"
-            android:icon="@drawable/leaf"
+            android:icon="@drawable/heart"
             android:title="@string/menu2" />
         <item
             android:id="@+id/nav_board"
-            android:icon="@drawable/leaf"
+            android:icon="@drawable/heart"
             android:title="@string/menu3" />
         <item
             android:id="@+id/nav_news"
-            android:icon="@drawable/leaf"
+            android:icon="@drawable/heart"
             android:title="@string/menu4" />
     </group>
 

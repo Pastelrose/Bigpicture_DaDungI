@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
+        android:padding="5dp"
         android:background="@color/bg_white"
         android:orientation="vertical">
 
@@ -58,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:text="address adrress address"
+                android:textColor="@color/text_color_black"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -72,19 +74,23 @@
                 android:layout_margin="2dp"
                 android:text="혜택 "
                 android:textSize="12sp"/>
+
             <TextView
                 android:id="@+id/ent_bef"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:text="benefit"
+                android:textColor="@color/text_color_black"
                 android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="1">
+
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
@@ -92,13 +98,16 @@
                 android:layout_margin="2dp"
                 android:text="TEL. "
                 android:textSize="12sp"/>
+
             <TextView
                 android:id="@+id/ent_tel"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:text="tel"
-                android:textSize="12sp" />
+                android:text="(전화번호 없음)"
+                android:textSize="12sp"
+                android:layout_weight="0.11" />
+
         </LinearLayout>
 
     </LinearLayout>

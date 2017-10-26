@@ -11,9 +11,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bg_white"
+        android:background="@color/theme_color"
         android:elevation="3dp"
         app:popupTheme="@style/AppTheme.PopupOverlay"
-        app:titleTextColor="@color/text_color_black" />
+        app:titleTextColor="@color/text_color_white" />
 
 </android.support.design.widget.AppBarLayout>

@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity
 
         headerLayout = navigationView.getHeaderView(0);
 
+        GoLib.getInstance().goFragment(getSupportFragmentManager(),
+                R.id.content_main, SearchListFragment.newInstance());
+
         //GoLib.getInstance().goFragment(getSupportFragmentManager(), R.id.content_main,ESCListFragment.newInstance());
     }
 

@@ -63,8 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:text="tel"
-                    android:textColor="@color/text_color_black"
+                    android:text="(전화번호 없음)"
                     android:textSize="16sp" />
             </LinearLayout>
             <LinearLayout
