@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Bigpicture_DaDungI.iml" filepath="$PROJECT_DIR$/Bigpicture_DaDungI.iml" />
+      <module fileurl="file://E:\Main\worksapce\android\DaDungI\Bigpicture_DaDungI.iml" filepath="E:\Main\worksapce\android\DaDungI\Bigpicture_DaDungI.iml" />
       <module fileurl="file://$PROJECT_DIR$/DaDungI.iml" filepath="$PROJECT_DIR$/DaDungI.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
