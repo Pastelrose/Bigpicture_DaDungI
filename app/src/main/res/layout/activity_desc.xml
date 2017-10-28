@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,12 +14,14 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/toolbar2"
-        android:background="@color/bg_default">
+        android:background="@color/bg_tinyGray">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clipToPadding="false"
+            android:padding="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -28,7 +31,8 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/bg_round">
+                android:background="@drawable/bg_round_no_stroke"
+                android:elevation="2dp">
 
                 <TextView
                     android:id="@+id/coopName"
@@ -44,8 +48,8 @@
                     android:id="@+id/coopType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="coopType"
-                    android:layout_margin="3dp"/>
+                    android:layout_margin="3dp"
+                    android:text="coopType" />
 
             </LinearLayout>
             <LinearLayout
@@ -56,7 +60,8 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/bg_round">
+                android:background="@drawable/bg_round_no_stroke"
+                android:elevation="2dp">
 
                 <TextView
                     android:id="@+id/tel"
@@ -74,7 +79,8 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/bg_round">
+                android:background="@drawable/bg_round_no_stroke"
+               android:elevation="2dp">
 
                 <TextView
                     android:id="@+id/benefit"
@@ -82,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:text="혜택"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/benDesc"
@@ -101,7 +107,8 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/bg_round">
+                android:background="@drawable/bg_round_no_stroke"
+                android:elevation="2dp">
 
                 <TextView
                     android:id="@+id/maptitle"
@@ -109,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:text="지도"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/coopAddr"
@@ -117,7 +124,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:text="coopAddr"
-                    android:textColor="@color/text_color_black" />
+                    android:textColor="@color/text_color_black"
+                    android:textSize="14sp" />
 
                 <fragment
                     android:id="@+id/map"

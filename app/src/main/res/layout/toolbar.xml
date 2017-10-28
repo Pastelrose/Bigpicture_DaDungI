@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="50dp"
     android:theme="@style/AppTheme.AppBarOverlay">
 
     <android.support.v7.widget.Toolbar
@@ -14,6 +14,7 @@
         android:background="@color/theme_color"
         android:elevation="3dp"
         app:popupTheme="@style/AppTheme.PopupOverlay"
-        app:titleTextColor="@color/text_color_white" />
+        app:titleTextColor="@color/text_color_white"
+        app:titleTextAppearance="@style/ActionBarTitleStyle"/>
 
 </android.support.design.widget.AppBarLayout>

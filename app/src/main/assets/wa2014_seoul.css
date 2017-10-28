@@ -1,0 +1,540 @@
+﻿@charset'euc-kr';
+
+/* header */
+#header {position:relative; width:801px; margin:auto; height:128px; z-index:2;}
+#header h1 {position:absolute;top:46px;left:0px;}
+
+.utill {position:absolute;top:10px;right:0px;}
+.utill li {float:left; padding:0 8px 0 8px; background:url(http://seouli.bccard.com/images/common/bg_utill_bar.gif) right 2px no-repeat;}
+.utill li a, .utill li a:hover {font-size:11px; color:#014f6f;}
+.utill li.none {background-image:none;}
+.utill li.btn_link {margin:-4px 3px 0 3px; padding:0; background:none}
+
+/*GNB메뉴*/
+#gnb {position:absolute; display:block; height:60px; top:68px; left:227px;}
+#gnb li {position:absolute; top:0px}
+#gnb li a {line-height:1; text-indent:-5000px; display:block; background:url(http://seouli.bccard.com/images/common/mNavi.gif) no-repeat; height:18px; font-size:0px;}
+#gnb li#mNavi01 {left:0px;}
+#gnb li#mNavi02 {left: 150px;}
+#gnb li#mNavi03 {left: 313px;}
+#gnb li#mNavi04 {left: 461px;}
+
+#gnb li#mNavi01 a {width:128px; background-position:0 0;}
+#gnb li#mNavi02 a {width:163px; background-position:-150px 0;}
+#gnb li#mNavi03 a {width:143px; background-position:-313px 0;}
+#gnb li#mNavi04 a {width:119px; background-position:-461px 0;}
+
+#gnb li #mNavilink1 {display:none;}
+#gnb li #mNavilink2 {display:none;}
+#gnb li #mNavilink3 {display:none;}
+#gnb li #mNavilink4 {display:none;}
+
+#gnb li#mNavi01 A:hover, #gnb li#mNavi01 A.hover {background-position:0 -18px;}
+#gnb li#mNavi02 A:hover, #gnb li#mNavi02 A.hover {background-position:-150px -18px;}
+#gnb li#mNavi03 A:hover, #gnb li#mNavi03 A.hover {background-position:-313px -18px;}
+#gnb li#mNavi04 A:hover, #gnb li#mNavi04 A.hover {background-position:-461px -18px;}
+
+#gnb li ul {position:absolute; visibility:hidden; top:27px; padding-top:27px;}
+#gnb li ul li {position:static; display:inline; float:left;}
+#gnb li ul li a {width:auto !important; height:22px !important; padding-top:2px; font-size:12px; color:#333; text-decoration:none; background-image:none; text-indent:0;}
+#gnb li ul li a:hover {color:#69c9da; font-weight:bold;}
+#gnb li ul li a.hover {color:#000; font-weight:bold;}
+
+#gnb li#mNavi01 ul {width:203px; height:135px; left:-41px; background:url(http://seouli.bccard.com/images/common/bg_gnb01.png) no-repeat;}
+#gnb li#mNavi02 ul {width:203px; height:110px; left:-16px; background:url(http://seouli.bccard.com/images/common/bg_gnb02.png) no-repeat;}
+#gnb li#mNavi03 ul {width:203px; height:110px; left:-28px; background:url(http://seouli.bccard.com/images/common/bg_gnb03.png) no-repeat;}
+#gnb li#mNavi04 ul {width:203px; height:84px; left:-26px; background:url(http://seouli.bccard.com/images/common/bg_gnb04.png) no-repeat;}
+#gnb li#mNavi01 ul li, #gnb li#mNavi02 ul li, #gnb li#mNavi03 ul li, #gnb li#mNavi04 ul li {clear:left; width:180px; margin-left:21px; cursor:pointer; display:block;}
+#gnb li#mNavi01 ul li a, #gnb li#mNavi02 ul li a, #gnb li#mNavi03 ul li a, #gnb li#mNavi04 ul li a {color:#666; padding-left:10px}
+#gnb li#mNavi01 ul li a:hover, #gnb li#mNavi02 ul li a:hover, #gnb li#mNavi03 ul li a:hover, #gnb li#mNavi04 ul li a:hover {color:#000; padding-left:10px; font-weight:bold; text-decoration:none; background:url(http://seouli.bccard.com/images/common/gnb_bullet.gif) 0 4px no-repeat;}
+#gnb li#mNavi01 ul li a.hover, #gnb li#mNavi02 ul li a.hover, #gnb li#mNavi03 ul li a.hover, #gnb li#mNavi04 ul li a.hover {color:#000; padding-left:10px; font-weight:bold; text-decoration:none; background:url(http://seouli.bccard.com/images/common/gnb_bullet.gif) 0 4px no-repeat;}
+
+.noscript-menu {position:absolute; display:block; width:700px; height:60px; top:68px; left:260px;}
+.noscript-menu li {float:left; line-height:15px; padding-right:76px;}
+.noscript-menu li a {float:left; height:60px; display:inline-block; white-space:nowrap; color:#666668; font-size:16px;}
+.noscript-menu li a:link {color:#000;}
+.noscript-menu li a:visited {color:#000;}
+.noscript-menu li a:hover {font-weight:bold; color:#fc6000;}
+.noscript-menu li a:focus {font-weight:bold;}
+.noscript-menu li a:active {font-weight:bold;}
+.noscript-menu li ul {position:absolute; width:600px; visibility:hidden; top:36px;}
+.noscript-menu li.mNavi01 ul {width:600px; left:0px;}
+.noscript-menu li.mNavi02 ul {width:300px; left:95px;}
+.noscript-menu li.mNavi03 ul {width:150px; left:206px;}
+.noscript-menu li.mNavi04 ul {width:200px; left:307px;}
+.noscript-menu li.mNavi05 ul {width:550px; left:120px;}
+.noscript-menu li.mNavi06 ul {width:900px; left:-113px;}
+.noscript-menu li:hover ul {visibility:visible;}
+.noscript-menu li:focus ul {visibility:visible;}
+.noscript-menu li:active ul {visibility:visible;}
+.noscript-menu li ul li a:link {letter-spacing:-1px; font-size:13px; font-weight:normal;}
+.noscript-menu li ul li a:visited {letter-spacing:-1px; color:#000; font-size:13px;}
+.noscript-menu li ul li a:hover {color:#000; font-weight:bold;}
+.noscript-menu li ul li {padding-left:5px;  padding-right:15px;}
+
+/*LNB메뉴*/
+#left {float:left; margin:0 33px 0px 0px; width:160px;}
+#left h2 {height:71px;}
+ul.lnbMenu1, ul.lnbMenu2, ul.lnbMenu3, ul.lnbMenu4 {width:160px; padding-bottom:40px; padding-top:3px;}
+ul.lnbMenu1 li, ul.lnbMenu2 li, ul.lnbMenu3 li, ul.lnbMenu4 li {padding-left:0px; padding-right:0px;}
+ul.lnbMenu1 li a, ul.lnbMenu2 li a, ul.lnbMenu3 li a, ul.lnbMenu4 li a {display:block; color:#666; border-bottom:#d0d0d0 1px solid; padding:7px 0 6px 10px; text-decoration:none; font-weight:bold;}
+ul.lnbMenu1 li a:hover, ul.lnbMenu1 li a.hover {background:#c72200; color:#fff; text-decoration:none;}
+ul.lnbMenu1 li ul {display:block; border-bottom:#d0d0d0 1px solid; padding:8px 0 7px 0;}
+ul.lnbMenu1 li ul li a {border:none; color:#666; font-weight:normal; padding:3px 0 1px 19px; background:url(http://seouli.bccard.com/images/common/lnb_bullet.gif) 13px 7px no-repeat;}
+ul.lnbMenu1 li ul li a:hover, ul.lnbMenu1 li ul li a.hover {background:url(http://seouli.bccard.com/images/common/lnb_bullet.gif) 13px 7px no-repeat; color:#c72200; text-decoration:none;}
+ul.lnbMenu2 li ul {display:block; border-bottom:#d0d0d0 1px solid; padding:8px 0 7px 0;}
+ul.lnbMenu2 li ul li a {border:none; color:#666; font-weight:normal; padding:3px 0 1px 19px; background:url(http://seouli.bccard.com/images/common/lnb_bullet.gif) 13px 7px no-repeat;}
+ul.lnbMenu2 li ul li a:hover, ul.lnbMenu2 li ul li a.hover {background:url(http://seouli.bccard.com/images/common/lnb_bullet.gif) 13px 7px no-repeat !important; color:#007ea3; text-decoration:none;}
+ul.lnbMenu2 li a:hover, ul.lnbMenu2 li a.hover {background:#007ea3 !important; color:#fff;}
+ul.lnbMenu3 li a:hover, ul.lnbMenu3 li a.hover {background:#00932c !important; color:#fff;}
+ul.lnbMenu4 li a:hover, ul.lnbMenu4 li a.hover {background:#b7444e !important; color:#fff;}
+
+
+#main_container {position:relative; width:801px; height:523px; margin:auto;}
+#container {position:relative; width:801px; margin:25px auto 50px;}
+#container:after {clear:both; content:""; display:block; height:0; overflow:hidden;}
+
+/*login layout*/
+#container_1 {position:relative; width:920px; margin:25px auto 50px;}
+#container_1:after {clear:both; content:""; display:block; height:0; overflow:hidden;}
+
+#body_guide {float:left; width:600px;}
+#body_guide2 {width:600px;margin:0px 0px 0px 0px;}
+
+/* 메인비주얼 */
+#visualWrap {position:relative; float:left; width:523px; border-left:1px solid #d9d9d9; border-right:1px solid #d9d9d9; z-index:1;}
+#visualWrap figure img {display: none; font:0/0 Dotum; }
+
+.ctrl-visual {position:absolute; z-index:1; top:20px; right:20px; line-height:0; }
+.ctrl-visual button { display:inline-block; *display:inline; *zoom:1; padding:0; width:14px; height:14px; font-size: 0; line-height: 0; border:none; background:url(http://seouli.bccard.com/images/main/btn_ctrl_visual.png) no-repeat -75px top; }
+.ctrl-visual button > span {position:absolute; width:1px; height:1px; font-size:0; line-height:0; overflow:hidden; visibility:hidden;}
+.ctrl-visual button:first-child { background-position: -75px top; *margin: 0 4px 0 0; }
+.ctrl-visual button.active { background-position: -88px top; }
+.ctrl-visual button:first-child.active { background-position: -58px top; }
+
+.visual-list {position:relative; height:523px; padding:0; *zoom:1; }
+.visual-list:after {display: block; clear: both; content:'';}
+.visual-list dt {float:left; margin:20px 0 0 4px; position:relative; z-index:1; }
+.visual-list dt a { display: block; width:12px; height:12px; font: 0/0 Dotum; text-indent: -999em; background:url(http://seouli.bccard.com/images/main/btn_ctrl_visual.png) no-repeat -37px top; }
+.visual-list dt a.active { width:34px; background-position: left top; }
+.visual-list dd { position:absolute; left: 0; top: 0; width:523px; height:523px; margin:0; padding:0;}
+.wrap-main-cont {overflow:hidden; width:100%; border-right: 1px solid #e5e5e5; *zoom: 1; }
+.wrap-main-cont section { float: left; position: relative; border-left: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; }
+
+#visMain00 {background:url('http://seouli.bccard.com/images/main/bg_visual01.jpg') no-repeat 0 0;}
+#visMain00 p {margin-left:30px; margin-top:22px;}
+#visMain01 {background:url('http://seouli.bccard.com/images/main/bg_visual02.jpg') no-repeat 0 0;}
+#visMain01 p {margin-left:57px; margin-top:60px;}
+#visMain01 p.btn {margin-left:57px; margin-top:10px;}
+#visMain01 ul {margin-left:20px; margin-top:120px;}
+#visMain01 ul li {float:left; margin-left:10px;}
+#visMain02 {background:url('http://seouli.bccard.com/images/main/bg_visual03.jpg') no-repeat 0 0;}
+#visMain02 p {margin-left:57px; margin-top:60px;}
+#visMain02 p.btn {margin-left:57px; margin-top:10px;}
+#visMain02 ul {margin-left:20px; margin-top:80px;}
+#visMain02 ul li {float:left; margin-left:10px;}
+.visual-list dt.ctrl { margin-left:395px;}
+
+/**/
+.conCenter {float:left; width:255px; height:504px; padding-left:20px; padding-top:19px; border-right:1px solid #d9d9d9;}
+
+/* 공지사항 */
+.notice {position:relative; width:235px; margin-bottom:10px;}
+.notice h3 {margin-bottom:10px;}
+.notice ul li {width:220px; padding:2px 0 3px 8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; background:url(http://seouli.bccard.com/images/common/gnb_bullet.gif) 0 6px no-repeat;}
+.notice .more {position:absolute; right:0; top:10px;}
+
+/* Service */
+.tabService {position:relative; width:235px; margin-bottom:15px; display:inline-block;}
+.tabService p {position:absolute; right:0; top:60px;}
+.tabService p img {margin-left:3px;}
+.service {float:left; position:relative; width:235px; min-height:204px; margin-top:20px; padding-left:1px; background:url(http://seouli.bccard.com/images/main/bg_service.gif) no-repeat 0 0; *zoom:1}
+.service:after {content:""; display:block; clear:both}
+.service li {float:left; position:relative}
+.service li.on span {position:absolute; top:30px; left:12px; width:6px; height:3px;}
+.service li > a {display:block; padding:1px 0 0 0px;}
+.service li.last a {background:none}
+.service li div {position:absolute; top:54px; left:0px; display:none}
+.service li.on div {display:block}
+.service li .service_01 {left:0px; display:block}
+.service li .service_02 {left:-40px}
+.service li .service_03 {left:-79px}
+.service li .service_04 {left:-118px}
+.service li .service_05 {left:-157px}
+.service li .service_06 {left:-196px}
+.service li div a {display:block}
+
+.bannerwrap {width:100%; height:112px; background:#717374;}
+.bannerwrap .card_service {width:801px; margin:0 auto; padding:11px 0 23px 18px;}
+
+/*quickMenu*/
+#quickwrap {position:absolute; right:-76px; top:36px; padding-top:19px; padding-bottom:40px; background:url(http://seouli.bccard.com/images/common/bg_quick_line.png) left 0 no-repeat;}
+#quickwrap h2{ visibility:hidden; position:absolute; font-size:0; width:0; height:0; line-height:0; margin:0; padding:0; background:none;}
+#quickwrap dl {background:url(http://seouli.bccard.com/images/common/bg_quick.gif) repeat-y;}
+#quickwrap dd {height:30px;}
+#quickwrap dd.subcont {height:44px;}
+#quickwrap dd.newico {height:63px;}
+.quickwrap_sub {right:-89px !important;}
+
+/*event zone */
+.left_event_zone{position:absolute; right:-76px; top:275px; padding-top:19px; padding-bottom:40px; background:url(http://seouli.bccard.com/images/common/bg_quick_line.png) left 0 no-repeat;}
+.left_event_zone2{position:absolute; right:0px; padding-top:19px; padding-bottom:40px; background:url(http://seouli.bccard.com/images/common/bg_quick_line.png) left 0 no-repeat;}
+
+
+/* footer */
+#footerwrap {display:block; height:110px; padding-bottom:30px; background:url(http://seouli.bccard.com/images/main/bg_footer.gif) repeat-x;}
+#footerwrap *{ vertical-align:middle;}
+#footerwrap #footer {position:relative; width:801px; margin:0 auto;}
+#footerwrap #footer h2{ visibility:hidden; position:absolute; font-size:0; width:0; height:0; line-height:0; margin:0; padding:0; background:none;}
+#footerwrap #footer ul.go_link {padding-left:20px; margin-bottom:34px; display:inline-block;}
+#footerwrap #footer ul.go_link li {float:left; padding-right:15px; margin-top:10px;}
+#footerwrap #footer ul.go_link, #footerwrap #footer ul.link_foot {float:left;}
+#footerwrap #footer ul.link_foot {margin-left:27px; margin-right:25px;}
+#footerwrap #footer ul.link_foot li {float:left; padding-right:0; margin-top:15px;}
+#footerwrap #footer ul.footer_logo li {float:left; padding-right:12px; margin-top:10px;}
+#footerwrap #footer p {float:left; clear:both; margin-left:10px;}
+#footerwrap #footer address {float:left; display:block; width:572px; height:44px; margin-left:24px; background:url(http://seouli.bccard.com/images/common/copy.gif) 0 0 no-repeat; text-indent:-10000px; z-index:1;}
+#footerwrap #footer p.footerMark {position:absolute; right:0; top:57px;}
+
+/*sub_visual*/
+.visual_01 {width:100%; height:159px; background:url(http://seouli.bccard.com/images/common/bg_visual_01.gif) repeat-x;}
+.visual_02, .visual_05, .visual_06, .visual_07 {width:100%; height:159px; background:url(http://seouli.bccard.com/images/common/bg_visual_02.gif) repeat-x;}
+.visual_03 {width:100%; height:159px; background:url(http://seouli.bccard.com/images/common/bg_visual_03.gif) repeat-x;}
+.visual_04 {width:100%; height:159px; background:url(http://seouli.bccard.com/images/common/bg_visual_04.gif) repeat-x;}
+.visual_01 p, .visual_02 p, .visual_03 p, .visual_04 p, .visual_05 p, .visual_06 p, .visual_07 p {width:801px; margin:0 auto; text-align:left;}
+
+.top_area {height:58px; margin-bottom:16px;}
+.top_area:after {content:""; display:block; clear:both}
+.top_area h3 {float:left; width:auto;}
+.top_area ul {float:right; width:auto; margin:12px 16px 0 0; font-size:11px; font-family:'Doutm','돋움'; *zoom:1}
+.top_area ul:after {content:""; display:block; clear:both}
+.top_area ul li {float:left; margin-right:4px; color:#555; line-height:12px; vertical-align:bottom}
+.top_area ul li a {display:block; color:#555}
+.top_area ul li:first-child {padding-left:13px; color:#666; background:url(http://seouli.bccard.com/images/common/blt_location.gif) no-repeat 0 1px}
+.top_area ul li:first-child a:hover {text-decoration:underline}
+.top_area ul li strong {font-weight:normal; color:#f26649}
+.top_area.menu02 ul li strong {color:#32acca}
+.top_area.menu03 ul li strong {color:#22b24c}
+.top_area.menu04 ul li strong {color:#981823}
+
+/* 기존 css */
+.ir_hidden {overflow:hidden; position:absolute; left:-9999px; width:0; height:0; text-indent:-4px;line-height:0; font-size:0;}
+.sub_title {margin-bottom:15px; padding-bottom:0}
+.btn_m01 {margin:16px 0 30px 0; text-align:center}
+.txt_st01 {margin:0 0 25px 22px; line-height: 18px}
+.list_st01 {margin:0px 0px 25px 15px}
+.list_st01 li {padding-left:8px; line-height: 18px; background:url('http://seouli.bccard.com/images/cardUse/icon_01.gif') no-repeat 0 4px}
+.list_st02 li {margin-top:15px}
+.list_st02 li:first-child {margin-top:0}
+.list_st03 {margin-left:25px}
+.list_st03 li {margin-bottom:5px; padding-left:12px; line-height:18px; background:url('http://seouli.bccard.com/images/cardUse/icon_02.gif') no-repeat 0 2px}
+.list_st03 li li {padding-left:15px; background:url('http://seouli.bccard.com/images/cardUse/blt_list02.gif') no-repeat 0 1px}
+.list_st03 li strong {font-weight:normal}
+.list_st03 ul {margin:5px 0 0 12px}
+.list_st03 li p {margin-top:5px; padding-left:15px; background:url('http://seouli.bccard.com/images/cardUse/blt_list02.gif') no-repeat 0 1px}
+.list_st04 {margin-left:25px}
+.list_st04 li {margin-bottom:5px; margin-left:12px; padding-left:15px; line-height:18px; background:url('http://seouli.bccard.com/images/cardUse/blt_list02.gif') no-repeat 0 2px}
+.list_st04 li.bg01 {background:url('/images/cardUse/blt_list03.gif') no-repeat 0 2px}
+.list_st04 li p {margin-top:5px}
+.p_st01 {padding-left:12px; line-height:18px; background:url('http://seouli.bccard.com/images/cardUse/icon_02.gif') no-repeat 0 3px}
+.p_st01 strong {font-weight:normal}
+.p_st02 {padding-left:15px; line-height:18px; background:url('http://seouli.bccard.com/images/cardUse/blt_list02.gif') no-repeat 0 2px}
+.p_st02 strong {font-weight:normal}
+.p_st03 {padding-left:12px; background:url('http://seouli.bccard.com/images/cprtFirm/icon_01.gif') no-repeat 0 3px}
+.p_st03 strong {color:#de2a01;}
+.list_st03 + .img_box {margin-top:3px}
+.img_box {*zoom:1}
+.img_box:after {content:""; display:block; clear:both}
+.img_box p {float:left; width:90px; text-align:right}
+.img_box ul {float:left; width:auto; margin:7px 0 0 10px}
+h6 + .p_st01 {margin-left:25px}
+h6 + .p_st02 {margin-left:25px}
+h5 + .p_st01 {margin-left:25px}
+h5 + .p_st02 {margin-left:25px}
+
+/* title 간격 */
+.hd_st01 h5 {margin-top:30px}
+.hd_st01 h6 {margin:30px 0 7px 0}
+.hd_st02 h4 {margin-top:0px}
+.hd_st02 h5 {margin:30px 0 7px 0}
+.hd_st03 h4 {margin:0 0 15px 0}
+.hd_st03 h5 {margin:30px 0 15px 0}
+.hd_st03 h6 {margin:15px 0 10px 20px}
+.hd_st03 .p_st01 {margin-left:40px}
+.hd_st03 .p_st02 {margin-left:40px}
+.hd_st03 .list_st03 {margin-left:40px}
+
+/* table 스타일 */
+caption {overflow:hidden; width:0; height:0; text-indent:-9999px; line-height:0; font-size:0;}
+caption.ir_hidden {overflow:hidden; width:0; height:0; text-indent:-9999px; line-height:0; font-size:0;}
+.tbl_box {width:576px; padding-left:24px}
+.table01 {width:100%; line-height:16px; border-collapse:separate; border-top:2px solid #dfcbc2; border-bottom:1px solid #dfcbc2;}
+.table01 thead th {padding:8px 0 6px 0; text-align:center; border-right:1px solid #eee; background:#faf6f5}
+.table01 tbody th {background:#f8f8f8; font-weight:normal}
+.table01 tbody th, .table01 tbody td {padding:7px 0 3px 10px; text-align:left; border-top:1px solid #eee; border-right:1px solid #eee; color:#777}
+.table01 tr.first th, .table01 tr.first td{border-top:0;}
+.table01 tr.cen th, .table01 tr.cen td {text-align:center; padding-left:0;}
+.table01 .cen {text-align:center; padding-left:0 !important;}
+.table01 tr.bt th {border-top:1px solid #eee;}
+.table01 tr.fc_st01 th {color:#d4846c; font-size:11px;}
+.table01 .bg {background:#faf6f5;}
+.table01 .bg01 {background:#fff;}
+.table01 .last {border-right:0;}
+.table01 .bnone {border:0;}
+.table01 .bottLine {border-bottom:1px solid #dfcbc2;}
+.table01.st01 {table-layout:fixed;}
+.table01.st01 th {padding:4px 0 4px 30px; text-align:left;}
+.table01.st01 td {padding:4px 0 4px 10px; text-align:left;}
+.table01.st01 .use_bd_03 {padding-left:30px;}
+.table01.st01 .fc14{color:#f26649; font-weight:bold; font-size:11px;}
+.tbl_box + ul, .table01 + ul {margin:10px 0 0 15px;}
+.table01 .bt {border-top:1px solid #dfcbc2;} 
+
+.table02 {width:100%; line-height:16px; border-collapse:separate; border-top:2px solid #b9dde5; border-bottom:1px solid #b9dde5;}
+.table02 thead th {padding:8px 0 6px 0; text-align:center; border-right:1px solid #eee; background:#f4f9f9}
+.table02 tbody th {background:#f8f8f8; font-weight:normal}
+.table02 tbody th, .table02 tbody td {padding:7px 0 3px 10px; text-align:left; border-top:1px solid #eee; border-right:1px solid #eee; color:#777}
+.table02 tr.first th, .table02 tr.first td{border-top:0}
+.table02 tr.cen th, .table02 tr.cen td {text-align:center; padding-left:0}
+.table02 .cen {text-align:center; padding-left:0 !important}
+.table02 tr.bt th {border-top:1px solid #eee}
+.table02 tr.fc_st01 th {color:#d4846c; font-size:11px}
+.table02 .bg {background:#faf6f5}
+.table02 .last {border-right:0}
+.tbl_box + ul, .table02 + ul {margin:10px 0 0 15px}
+.table03 td {border-bottom:1px solid #eee}
+.tbl_line {border-bottom:3px solid #eee}
+.table04 {width:100%; line-height:16px; text-align:left; border-collapse:separate; border-top:2px solid #c5dccc; border-bottom:1px solid #c5dccc}
+.table04 th {padding:7px 0 3px 30px; text-align:left; background:#f2f7f1; border-bottom:1px solid #eee; border-right:1px solid #eee}
+.table04 td {padding:7px 0 3px 15px; border-bottom:1px solid #eee}
+.table04 td.in {padding:4px 0 4px 10px}
+.table04 td.re {padding:20px 0 20px 10px}
+.table05 {width:100%; line-height:16px; text-align:left; border-collapse:separate; border-top:2px solid #e5c7c9; border-bottom:1px solid #eee}
+.table05 thead th {border-bottom:2px solid #e5c7c9}
+.table05 td {border-top:1px solid #e5c7c9;}
+
+.table06 {width:100%; line-height:16px; border-top:1px solid #9f9f9f; table-layout:fixed;}
+.table06 * {vertical-align:middle;}
+.table06 th {padding:10px 0 10px 0; text-align:center; border-bottom:1px solid #dbdbdd; background:#f6f6f6;}
+.table06 th span {color:#e80000; font-weight:bold;}
+.table06 td {padding:10px 0 10px 8px; text-align:left; border-bottom:1px solid #dbdbdd;}
+.table06 td input.homepage {color:#bcbcbc;}
+
+.table07 {width:100%; line-height:16px; border-top:1px solid #9f9f9f; table-layout:fixed;}
+.table07 * {vertical-align:middle;}
+.table07 th {padding:10px 0 10px 0; color:#333333; text-align:center; border-bottom:1px solid #9f9f9f; border-right:1px solid #dbdbdd; background:#f6f6f6;}
+.table07 td {padding:10px 4px 10px 4px; text-align:center; border-bottom:1px solid #dbdbdd; border-right:1px solid #dbdbdd;}
+.table07 th.board_txt02, .table07 td.board_txt02 {border-right:none;}
+.table07 td.board_txt01_l {text-align:left;}
+
+/* 검색 */
+.notice_serch {margin-top:30px; *zoom:1}
+.notice_serch:after {content:""; display:block; clear:both}
+.notice_serch div {width:245px; margin:0 auto}
+.notice_serch input, .notice_serch select {float:left}
+.notice_serch input[type="text"] {margin-left:8px}
+.notice_serch input[type="image"]{margin-left:8px}
+
+/* 임시 페이징네이션 
+.paginatioin {width:100%; overflow:hidden; margin-top:10px; text-align:center;}
+.paginatioin a {display:inline-block}
+.paginatioin table {margin:10px auto 0}*/
+
+.paginatioin {margin-top:10px; line-height:14px; text-align:center}
+.paginatioin * {vertical-align:middle; margin:0; padding:0}
+.paginatioin a {padding:0 8px 0 2px; background:url('http://seouli.bccard.com/images/common/blt_paginatioin.gif') no-repeat 100% 0; color:#777}
+.paginatioin strong {color:#ff6633; padding:0 8px 0 2px; background:url('http://seouli.bccard.com/images/common/blt_paginatioin.gif') no-repeat 100% 0}
+.paginatioin .first_page {position:relative; top:-2px; margin-right:6px; padding-right:0; background:none;}
+.paginatioin .prev_page {padding:0 5px 0 2px; background:url('http://seouli.bccard.com/images/common/blt_paginatioin.gif') no-repeat 100% 0}
+.paginatioin .next_page {padding:0; background:none;}
+.paginatioin .last_page {padding:0; background:none; position:relative; top:-2px;}
+
+/*알림글*/
+.notice_list {margin-top:60px; padding:6px 0 4px 0; line-height:13px; border-top:1px solid #eee; border-bottom:1px solid #eee; *zoom:1}
+.notice_list strong {margin:0 4px 0 0}
+.notice_list a:hover {text-decoration:underline}
+.notice_list a, .notice_list span {vertical-align:top}
+.notice_list p + p {margin-top:5px}
+
+.faqBox {width:552px; padding:15px 20px 0 20px; background:url('http://seouli.bccard.com/images/common/bgFaq.gif'); line-height:25px; *zoom:1}
+.faqBox:after {content:"";display:block;clear:both}
+.faqBox a {display:block; float:left;}
+.faqBox span {padding-left:10px; margin-right:20px; line-height:14px; background:url('http://seouli.bccard.com/images/common/bul/bulCircleB.gif') 0 1px no-repeat}
+.faqBtm {width:592px; height:15px; background:url('../../images/common/bgFaqB.gif') no-repeat 0 0}
+.faqBox span a:hover {text-decoration:underline}
+.faqBox span.on {color:#ca1a7f}
+.faqBox span a:active {color:#ca1a7f}
+.faqBox span a {color:#454f80}
+.faq_01 {padding:5px 0 3px 34px; border-bottom:1px solid #eee; background:url('http://seouli.bccard.com/images/cmty/icon_q_01.gif') no-repeat 9px 4px;}
+.faq_bg_01 {padding:8px 0 6px 34px; border-bottom:1px solid #eee; background:#f2f7f1 url('http://seouli.bccard.com/images/cmty/icon_a_01.gif') no-repeat 9px 6px}
+
+.pw_box {padding-top:41px; height:196px; text-align:center; background:url('http://seouli.bccard.com/images/cmty/qna_bg_01_03.gif') no-repeat 0 0}
+.pw_box p {margin-bottom:39px}
+
+/*개인정보보호정책*/
+.info_box {padding:20px 10px 0 10px; background:url('/images/cdhd/bg_top.gif') no-repeat 0 0;}
+.info_box .info_btm {width:600px; height:17px; margin-left:-10px; background:url('http://seouli.bccard.com/images/cdhd/bg_bottom.gif') no-repeat 0 0}
+h5.agree{ height:20px; margin:10px 0 0 10px; font-size:14px; color:#706A65; }
+h6.agree{ height:20px; padding:0;background:none;border:none; margin:10px 0 0 10px; font-size:12px; color:#706A65}
+
+/*popup 실명확인*/
+.pop_chkbox {width:500px; padding:19px 10px 10px 20px}
+.pop_chk_h {margin-bottom:10px}
+.pop_chkbody {width:380px; height:173px; padding-top:41px; text-align:center; background:url('http://seouli.bccard.com/images/cardUse/pop_bg.gif') no-repeat 0 0}
+.pop_chkbody .txt01 {font-size:14px;font-weight:bold; line-height:16px}
+.pop_chkbody .txt01 .style3 {color:#9a5d6d;}
+.pop_chkbody .txt02 {font-size:14px;line-height:16px}
+.pop_chkbody .txt03 {font-size:12px;line-height:16px}
+.inp_box {width:320px; margin:20px auto 0; text-align:left; border-top:2px solid #ebd7d4; border-bottom:2px solid #ebd7d4}
+.inp_box li:first-child {border-top:none}
+.inp_box li {padding:4px 0 4px 0; border-top:1px solid #ddd}
+.inp_box strong {display:inline-block; width:55px; margin-left:10px; font-size:11px; padding-left:6px; background:url('http://seouli.bccard.com/images/common/bult_02.gif') 0 5px no-repeat;}
+.inp_box span {margin-left:0px;}
+.pop_chkbody .btn {margin-top:16px;}
+.pop_chkbody .btn a {/*display:block;*/}
+.pop_chkbody .btn01 {margin-top:16px; display:inline-block;}
+.pop_chkbody .btn01 a {margin-right:5px;}
+.pop_close {width:380px; margin-top:20px; padding:9px 0 8px 0;text-align:center; background:url('http://seouli.bccard.com/images/cardUse/btn_bg.gif') no-repeat 0 0}
+.txt_box {height:105px; margin:40px 0 0 0; padding:19px 0 0 19px; background:url('http://seouli.bccard.com/images/cprtFirm/bg_txt_box.gif') no-repeat 0 0}
+.txt_box h6 {margin:0 0 10px 0}
+.txt_box ul {margin-left:20px}
+.txt_box ul li {padding-left:7px; background:url('http://seouli.bccard.com/images/cprtFirm/icon_02.gif') no-repeat 0 4px}
+.txt_box ul li strong {font-weight:normal}
+
+/*사이트맵*/
+.sitemap {*zoom:1}
+.sitemap:after {content:""; display:block; clear:both}
+.sitemap li {float:left}
+.sitemap li div {width:153px; height:207px; margin-bottom:25px}
+.sitemap li h4 {font-size:14px; margin-bottom:5px; padding-top:8px; color:#fff; text-align:center; width:184px; height:25px; background:url('http://seouli.bccard.com/images/sitemap/tit_bg.gif') no-repeat;}
+.sitemap li {margin-right:23px; width:184px;}
+.sitemap li.mr {margin-right:0;}
+.sitemap li ul li {margin-bottom:1px; padding:7px 0 4px 0; border-bottom:1px solid #d8d8d8;}
+.sitemap li ul li span {padding-left:14px; background:url('http://seouli.bccard.com/images/sitemap/icon.gif') no-repeat 7px 5px;}
+.sitemap li ul li a {display:block; color:#000;}
+.sitemap li ul li a:hover {color:#000;}
+
+/*.sitemap li ul li.last{padding-bottom:60px}
+.sitemap li.m01 ul {background:url('http://seouli.bccard.com/images/sitemap/01_box_top_01.gif') no-repeat 0 0}
+.sitemap li.m01 ul li.last {background:url('http://seouli.bccard.com/images/sitemap/01_box_bottom.gif') no-repeat 0 100%}
+.sitemap li.m02 ul {background:url('http://seouli.bccard.com/images/sitemap/02_box_top_01.gif') no-repeat 0 0}
+.sitemap li.m02 ul li.last {background:url('http://seouli.bccard.com/images/sitemap/02_box_bottom.gif') no-repeat 0 100%}
+.sitemap li.m03 ul {background:url('/images/sitemap/03_box_top_01.gif') no-repeat 0 0}
+.sitemap li.m03 ul li.last {background:url('http://seouli.bccard.com/images/sitemap/03_box_bottom.gif') no-repeat 0 100%}
+.sitemap li.m04 ul {background:url('/images/sitemap/04_box_top_01.gif') no-repeat 0 0}
+.sitemap li.m04 ul li.last {background:url('http://seouli.bccard.com/images/sitemap/04_box_bottom.gif') no-repeat 0 100%}
+.sitemap li.m05 ul {background:url('http://seouli.bccard.com/images/sitemap/05_box_top_01.gif') no-repeat 0 0}
+.sitemap li.m05 ul li.last {background:url('http://seouli.bccard.com/images/sitemap/05_box_bottom.gif') no-repeat 0 100%}
+.sitemap li.m06 ul {background:url('http://seouli.bccard.com/images/sitemap/06_box_top_01.gif') no-repeat 0 0}
+.sitemap li.m06 ul li.last {background:url('http://seouli.bccard.com/images/sitemap/06_box_bottom.gif') no-repeat 0 100%}
+.sitemap li li {float:none}*/
+
+/* 에러페이지 */
+.error_box{width:572px; height:93px; background:url("http://seouli.bccard.com/images/myPge/error_box_bg.gif") repeat-x 0 0; padding:20px 0 0 28px;}
+.inner_erbox{ height:73px; padding:10px 15px; background:url("http://seouli.bccard.com/images/cardUse/imgInstallment.gif") no-repeat left top;}
+.inner_erbox p{margin:0 0 10px 100px;}
+.error_textbox{width: 600px; margin:30px 0 0 0;}
+
+/* 마이페이지 > 사용내역조회 > 청구내역조회  > 회원사별 */
+.h4_tit12 {margin:12px 0;}
+.top_tapbox .bill_tbbox {height:25px; margin:15px 0 0 0; background:url("/images/myPge/tab_bg_01.gif") repeat-x  0 bottom; *zoom:1;}
+.bill_tbbox:after{content:""; clear:both; display:block;}
+.bill_tbbox li{float:left; margin:0 1px 0 0;}
+
+.billp_serbox {width:456px; height:89px; margin:30px 0 25px 0;padding:22px 0 0 145px; background:url("/images/myPge/myPge_billact_bg.gif")  no-repeat 0 0;}
+.billp_serbox p{margin:0 0 10px 0;}
+.billp_serbox strong{margin:0 23px 0 0;display:inline-block;}
+
+.billp_serleft{float:left; }
+.billp_serleft a img{vertical-align:bottom; }
+
+
+.billp_info{margin:15px 0 0 0;}
+.billp_info p{line-height:150% !important;}
+
+.billbcash_buy {width:600px; border-top:2px solid #b9dde5; border-bottom:1px solid #b9dde5; margin: 0 0 15px 0;}
+.billbcash_buy th {padding:7px 4px; background:rgb(244, 249, 249); border-bottom:1px solid #b9dde5;}
+
+.billbcash_buy th.last_reuslt{padding:7px 4px; font-weight:bold; background:#fff; border-top:1px solid #b9dde5 !important; border-bottom:1px solid #b9dde5; border-right:1px solid #eeeeee;}
+.billbcash_buy td.last_reusltd{padding:7px 4px; border-left:1px solid #eeeeee; background:#fff; border-top:1px solid #b9dde5 !important; border-bottom:1px solid #b9dde5 !important; text-align:right;}
+.billbcash_buy td.use_day{ border-bottom:1px solid #b9dde5;}
+
+.billbcash_buy td{padding:7px 4px;border-right:1px solid #eeeeee; border-top:1px solid #eeeeee; text-align:left;}
+.billbcash_buy td.first{background:#f8f8f8; border-right:1px solid #eeeeee; border-bottom:1px solid #eeeeee; text-align:center; font-weight:bold;}
+.billbcash_buy td.last{background:#f8f8f8; border-right:1px solid #eeeeee; border-bottom:1px solid #b9dde5; text-align:center; font-weight:bold;}
+
+
+.billb_moredata table{border-bottom:1px solid #b9dde5;}
+.billb_moredata th{padding:7px 4px; background:#F4F9F9; border-top:2px solid #b9dde5;}
+.billb_moredata td{padding:7px 4px; border-bottom: 1px solid #eeeeee; text-align: left;}
+
+/* 승인내역조회 */
+.billp_serbox3 {width:500px; height:118px; margin:30px 0 25px 0;padding:26px 0 0 100px; background:url("/images/myPge/bg_approve_bg.gif")  no-repeat 0 0; *zoom:1}
+.billp_serbox3:after{content:"";clear:both; display:block;}
+.billp_serbox3 a{display:inline-block; margin:8px 0 0 15px;}
+.billp_serbox3 p{margin:0 0 5px 0;}
+.billp_serbox3 p.indate{margin:0 0 10px 86px; }
+.billp_serbox3 strong{margin:0 23px 0 0;display:inline-block;}
+.billp_serbox3 button {background:none; border:0; vertical-align:bottom;width:21px; height:21px; margin:0;padding:0}
+table button {background:none; border:0; vertical-align:bottom; width:21px; height:21px;margin:0;padding:0}
+.billp_serleft3{float:left; }
+.none_result{text-align: center !important;}
+
+/*승인내역조회 - 요약내역 테이블 */
+.table_3serch table{width:600px; margin:10px 0; border-bottom:1px solid #b9dde5;}
+.table_3serch th{padding:5px 4px; background:#F4F9F9; border-top:2px solid #b9dde5; border-bottom:1px solid #b9dde5; border-right:1px solid #EEEEEE;}
+.table_3serch th.inner{padding:7px 3px; background:#F8F8F8; border-top:1px solid #eeeeee; border-bottom:1px solid #b9dde5; border-right:1px solid #EEEEEE;}
+.table_3serch td{padding:5px 4px; border-top:1px solid #b9dde5; border-bottom:1px solid #b9dde5;  border-right:1px solid #EEEEEE;}
+.table_3serch td.last{padding:7px 4px; border-top:1px solid #b9dde5; border-bottom:1px solid #b9dde5;  border-right:none;}
+
+.cash_text{overflow:hidden; width:100px;}
+
+/* 표 > [다음/이전]버튼 css*/
+.btm_btnline{width:600px; margin:10px 0; *zoom:1;}
+.btm_btnline:after{content:"";clear:both; display:block;}
+.btm_btnline .left_fubtn {float:left;  display:inline-block;}
+.btm_btnline .pbnt_right{float:right;display:inline-block;} 
+
+/*이미지 텍스트 박스 */
+.img_box1 { background:#f7f7f7; border-top: 1px solid #d9d8d8; border-bottom: 1px solid #d9d8d8; padding:13px 10px; margin:10px 0;}
+.img_box2 { width:600px; padding:10px 0; background:#f7f7f7 url("/images/myPge/img_print_01.gif") no-repeat 11px 15px;}
+.img_box2 p{padding:5px 0 5px 86px;}
+
+/*협력업체등록안내*/
+.add_down_box {padding-bottom:15px; margin-bottom:15px; background:url("/images/cprtFirm/add_box_bottom.gif") 0 bottom no-repeat;}
+
+/*협력업체찾기*/
+.searchround {height:304px; margin-top:10px; padding:22px 0 0 10px; background:url('/images/cprtFirm/searchround_bg_01.gif') no-repeat 0 0;*zoom:1}
+.searchround:after {content:""; display:block; clear:both}
+.searchround .map_img {float:left; width:309px; margin-left:6px}
+.searchround .map_txt {float:left; width:240px; margin:20px 0 0 14px}
+.searchround .map_txt div.searBox {width:230px; padding:20px 10px 17px 0px; margin-top:6px; background:#f9f9f9; border-top:1px solid #a1a1a1; border-bottom:1px solid #a1a1a1;}
+.searchround .map_txt div.searBox:after {content:""; display:block; clear:both}
+.searchround .map_txt div.searBox dt {float:left; width:73px; text-align:left; color:#58524e; padding:5px 0 5px 10px; font-weight:bold}
+.searchround .map_txt div.searBox dd {float:left; width:140px; height:26px; font-size:11px}
+
+/*우수협력업체*/
+.godSearch {width:600px; height:32px; text-align:center; padding-top:13px; background:url("/images/cprtFirm/godSearch_bg.gif") no-repeat;}
+.godSearch * {vertical-align:middle;}
+.godSearch label {margin-left:3px;}
+
+/*시스템장애안내*/
+.sysObstGuid {position:relative; width:350px; height:141px; padding:117px 0 0 215px; margin:225px auto 0; background:url("/images/cardBnft/system_bg.gif") no-repeat;}
+.sysObstGuid h1 {position:absolute; right:89px; top:43px;}
+.sysObstGuid h2 {position:absolute; left:55px; top:41px;}
+.sysObstGuid p {color:#000; line-height:20px;}
+
+/*카드발급 진행현황*/
+.apicBox {width:600px; height:64px; text-align:center; padding-top:30px; line-height:20px; margin-bottom:30px; background:url("/images/cardUse/apic_bg.gif") no-repeat;}
+.apicBox span {font-weight:bold; color:#e34a2e;}
+.apic_infoBox {border-top:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5; background:#f8f8f8; padding:20px 15px 12px 15px;}
+.apic_infoBox p {font-weight:bold; margin-bottom:15px;}
+.apic_infoBox li {padding-left:9px; margin-bottom:5px; background:url("/images/cardUse/icon_01.gif") 0 5px no-repeat;}
+
+/* 1박 2일 아빠캠프 2014-07-14 추가 */
+.camp_app_wrap {margin-top:20px; width:558px; padding:28px 20px; border:1px solid #cbcbcb; font-size:12px;}
+.camp_app_wrap .stit {height:30px;}
+.camp_app_wrap .txt_camp {font-size:12px; line-height:18px; color:#666;}
+.ml10 {margin-left:10px;}
+.ml20 {margin-left:20px;}
+.mr20 {margin-right:20px;}

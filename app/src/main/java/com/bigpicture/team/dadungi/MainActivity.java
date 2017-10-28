@@ -1,5 +1,8 @@
 package com.bigpicture.team.dadungi;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -12,6 +15,7 @@ import android.view.MenuItem;
 
 import com.bigpicture.team.dadungi.item.MemberInfoItem;
 import com.bigpicture.team.dadungi.lib.GoLib;
+import com.tsengvn.typekit.TypekitContextWrapper;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -23,7 +27,11 @@ public class MainActivity extends AppCompatActivity
     MemberInfoItem memberInfoItem;
     DrawerLayout drawer;
     View headerLayout;
-    CircleImageView profileIconImage;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(TypekitContextWrapper.wrap(newBase));
+    }
 
     //액티비티와 네이게이션 뷰를 설정하고 Fragment를 보여준다.
     //savedInstanceState: 액티비티가 새로 생성되었을 경우에 이전 상태 값을 가지는 객체
@@ -91,9 +99,14 @@ public class MainActivity extends AppCompatActivity
             GoLib.getInstance().goFragment(getSupportFragmentManager(),
                     R.id.content_main, MapFragment.newInstance());
         } else if (id == R.id.nav_board) {
-
+            GoLib.getInstance().goFragment(getSupportFragmentManager(),
+                    R.id.content_main, CardInfoFragment.newInstance());
         } else if (id == R.id.nav_news) {
-
+            GoLib.getInstance().goFragment(getSupportFragmentManager(),
+                    R.id.content_main, IssueCardInfoFragment.newInstance());
+        } else if (id == R.id.nav_homepage) {
+            Intent intent = new Intent (Intent.ACTION_VIEW, Uri.parse("http://seouli.bccard.com/app/iseoul/index.do"));
+            startActivity(intent);
         }
 
         drawer.closeDrawer(GravityCompat.START);

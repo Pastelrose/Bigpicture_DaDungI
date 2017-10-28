@@ -14,6 +14,7 @@
     <color name="bg_default">#88EEEEEE</color>
     <color name="bg_white">#FFFFFF</color>
     <color name="bg_littleGray">#eaeaea</color>
+    <color name="bg_tinyGray">#f0f0f0</color>
 
     <color name="theme_color">#ed6d96</color>
 </resources>

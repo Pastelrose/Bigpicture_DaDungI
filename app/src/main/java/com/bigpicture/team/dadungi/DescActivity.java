@@ -30,9 +30,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.tsengvn.typekit.TypekitContextWrapper;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,6 +51,11 @@ public class DescActivity extends AppCompatActivity implements OnMapReadyCallbac
     Context context;
     ScrollView scrollView;
     GoogleMap map2;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(TypekitContextWrapper.wrap(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,6 +189,7 @@ public class DescActivity extends AppCompatActivity implements OnMapReadyCallbac
         MarkerOptions marker = new MarkerOptions();
         marker.position(new LatLng(item.getLat(), item.getLon()));
         marker.draggable(false);
+        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.test_marker2));
         map2.addMarker(marker);
 
         movePosition(new LatLng(item.getLat(), item.getLon()), Constant.MAP_ZOOM_LEVEL_DETAIL);

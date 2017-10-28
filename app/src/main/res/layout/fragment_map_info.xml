@@ -11,14 +11,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
-        android:padding="5dp"
-        android:background="@color/bg_white"
-        android:orientation="vertical">
+        android:layout_margin="6dp"
+        android:background="@drawable/bg_round_no_stroke"
+        android:orientation="vertical"
+        android:elevation="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
             android:weightSum="1">
 
             <TextView
@@ -38,7 +39,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.27"
                 android:text="Health"
-                android:textAlignment="textEnd" />
+                android:textAlignment="textEnd"/>
 
         </LinearLayout>
 

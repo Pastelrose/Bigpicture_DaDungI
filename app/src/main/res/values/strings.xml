@@ -30,9 +30,9 @@
     <!--네비 화면-->
     <string name="menu1">업체 검색</string>
     <string name="menu2">지도 보기</string>
-    <string name="menu3">임시1</string>
-    <string name="menu4">임시2</string>
-    <string name="nav_profile">임시3</string>
+    <string name="menu3">카드 혜택</string>
+    <string name="menu4">신청 안내</string>
+    <string name="menu5">공식 홈페이지</string>
 
 
     <!-- 프로필 -->

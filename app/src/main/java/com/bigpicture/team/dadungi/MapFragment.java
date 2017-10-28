@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.bigpicture.team.dadungi.adapter.SpinnerAdapter;
 import com.bigpicture.team.dadungi.item.EnterpriseInfoItem;
 import com.github.kimkevin.cachepot.CachePot;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -156,7 +157,28 @@ public class MapFragment extends Fragment
         }
         fragment.getMapAsync(this);
 
+        Spinner s = (Spinner)view.findViewById(R.id.spinner);
+        String[] types= getResources().getStringArray(R.array.types);
 
+        SpinnerAdapter s1Adapter = new SpinnerAdapter(getActivity(),android.R.layout.simple_spinner_item, types);
+        s.setAdapter(s1Adapter);
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                select_type = parent.getItemAtPosition(position).toString();
+                if(select_type.contains("전체"))select_type="*";
+                MyLog.d(TAG,select_type);
+                showList();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                select_type = "*";
+            }
+        });
+
+/*
         List<String> categories = new ArrayList<String>();
         String[] types = getResources().getStringArray(R.array.types);
         categories = spinnerSetting(types,categories);
@@ -173,6 +195,7 @@ public class MapFragment extends Fragment
                 select_type = parent.getItemAtPosition(position).toString();
                 if(select_type.contains("전체"))select_type="*";
                 MyLog.d(TAG,select_type);
+                showList();
             }
 
             @Override
@@ -181,7 +204,7 @@ public class MapFragment extends Fragment
                 MyLog.d(TAG,select_type);
             }
         });
-
+*/
 
 
     }
@@ -196,21 +219,6 @@ public class MapFragment extends Fragment
         return spinlist;
     }
 
-    /**
-     * 목록을 보여주는 버튼을 현재 상태 on 인자에 기반하여 설정한다.
-     * @param on 현재 버튼 상태가 목록보기라면 true, 목록닫기라면 false
-     */
-    private void setInfoList(boolean on) {
-        if (!on) {
-            isOnList = false;
-            list.setVisibility(View.GONE);
-            listOpen.setText(R.string.list_open);
-        } else {
-            isOnList = true;
-            list.setVisibility(View.VISIBLE);
-            listOpen.setText(R.string.list_close);
-        }
-    }
 
     /**
      * 구글맵이 준비되었을 때 호출되며 구글맵을 설정하고 기본 마커를 추가하는 작업을 한다.
@@ -244,7 +252,7 @@ public class MapFragment extends Fragment
         MyLog.d(TAG, GeoItem.getKnownLocation().toString());
 
         if (GeoItem.getKnownLocation() != null) {
-            movePosition(GeoItem.getKnownLocation(), Constant.MAP_ZOOM_LEVEL_DETAIL);
+            movePosition(GeoItem.getKnownLocation(), 14);
         }
         showList();
     }
@@ -370,7 +378,7 @@ public class MapFragment extends Fragment
         marker.position(new LatLng(item.lat, item.lon));
         marker.title(item.name);
         marker.draggable(false);
-
+        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.test_marker2));
         return marker;
     }
 
@@ -381,8 +389,8 @@ public class MapFragment extends Fragment
      */
     private void drawCircle(LatLng position) {
         double radiusInMeters = distanceMeter;
-        int strokeColor = 0x440000ff;
-        int shadeColor = 0x110000ff;
+        int strokeColor = 0x4438bff6;//0x440000ff;
+        int shadeColor = 0x1138bff6;
 
         CircleOptions circleOptions
                 = new CircleOptions().center(position).radius(radiusInMeters)

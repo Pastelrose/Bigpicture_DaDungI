@@ -1,5 +1,6 @@
 package com.bigpicture.team.dadungi;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import com.bigpicture.team.dadungi.adapter.SpinnerAdapter;
 import com.bigpicture.team.dadungi.item.SearchItem;
 import com.github.kimkevin.cachepot.CachePot;
+import com.tsengvn.typekit.TypekitContextWrapper;
 
 
 public class SearchListFragment extends Fragment {
@@ -55,7 +57,6 @@ public class SearchListFragment extends Fragment {
                                        int position, long id) {
                 pos = position;
                 type=parent.getItemAtPosition(pos).toString();
-                Toast.makeText(getActivity(),parent.getItemAtPosition(pos).toString(),Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -73,7 +74,6 @@ public class SearchListFragment extends Fragment {
                                        int position, long id) {
                 pos = position;
                 district =parent.getItemAtPosition(pos).toString();
-                Toast.makeText(getActivity(),parent.getItemAtPosition(pos).toString(),Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -104,4 +104,5 @@ public class SearchListFragment extends Fragment {
 
         return v;
     }
+
 }
