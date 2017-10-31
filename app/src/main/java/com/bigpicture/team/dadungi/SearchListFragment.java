@@ -92,7 +92,7 @@ public class SearchListFragment extends Fragment {
             public void onClick(View v) {
                 String name=editText.getText().toString();
                 SearchItem si = new SearchItem(name,type,district);
-                Toast.makeText(getActivity(),name+" "+type,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(),name+" "+type,Toast.LENGTH_SHORT).show();
                 CachePot.getInstance().push(si);
 
                 fm = getChildFragmentManager();
