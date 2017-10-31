@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bigpicture.team.dadungi.lib.MyToast;
 import com.bigpicture.team.dadungi.lib.RemoteLib;
 
 
@@ -35,17 +37,19 @@ public class IndexActivity extends AppCompatActivity {
         }
     }
 
-    //0.5초 이후에 startTask() 호출하여 서버에서 사용자 정보 조회
+    //0.5초 이후에 startTask() 호출하여
     @Override
     protected void onStart() {
         super.onStart();
-        Handler mHandler = new Handler();
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startMain();
-            }
-        },500);
+        if (RemoteLib.getInstance().isConnected(this)) {
+            Handler mHandler = new Handler();
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startMain();
+                }
+            }, 500);
+        }
     }
 
     //인터넷 접속 불가 메세지와 함께 종료 버튼
@@ -53,14 +57,15 @@ public class IndexActivity extends AppCompatActivity {
         TextView messageText = (TextView)findViewById(R.id.message);
         messageText.setVisibility(View.VISIBLE);
 
-        Button closeButton = (Button)findViewById(R.id.close);
-        closeButton.setVisibility(View.VISIBLE);
+        Button closeButton = (Button) findViewById(R.id.close);
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+        closeButton.setVisibility(View.VISIBLE);
+        MyToast.l(this,R.string.network_not_working);
 
     }
 

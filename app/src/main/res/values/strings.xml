@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">다둥이행복이</string>
+    <string name="app_name">다둥이 행복이</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -23,7 +23,6 @@
     <string name="permission_setting_restart">권한 설정 후 재시작</string>
 
     <!--시작 화면-->
-    <string name="index_message">Electronic Station Checker</string>
     <string name="network_not_working">네크워크에 연결되어 있지 않습니다.\n확인후 다시 실행해주세요.</string>
 
 
